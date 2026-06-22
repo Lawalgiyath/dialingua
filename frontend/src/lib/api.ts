@@ -11,6 +11,7 @@
 import type { Atlas, Health, TranslationResult } from "./types";
 import atlasStatic from "./atlas.json";
 import corpusStatic from "./corpus.json";
+import langAnnotationsStatic from "./lang-annotations.json";
 
 // --- mode detection ----------------------------------------------------------
 
@@ -125,6 +126,14 @@ const CORPUS = corpusStatic as unknown as Record<string, Array<{
   caveats?: string;
 }>>;
 
+// typed language-level linguistic annotations
+const LANG_ANNOTATIONS = langAnnotationsStatic as unknown as Record<string, {
+  tone_notes: string;
+  grammar: string;
+  morphology: string;
+  caveats: string;
+}>;
+
 // --- local helpers -----------------------------------------------------------
 
 async function localGet<T>(path: string): Promise<T> {
@@ -235,9 +244,23 @@ export async function translate(text: string, target: string): Promise<Translati
     confidence = (corpusHit?.entry.confidence as typeof confidence) ?? "low";
   }
 
-  // Annotate with corpus linguistic data if available
-  const annotation = corpusHit?.entry;
-  const isPartial = corpusHit?.partial ?? false;
+  // Annotate: corpus phrase-specific data takes priority;
+  // language-level scholarly annotations fill in anything missing.
+  const phraseData = corpusHit?.entry;
+  const langAnn    = LANG_ANNOTATIONS[target];
+  const isPartial  = corpusHit?.partial ?? false;
+
+  // For neural languages, prefix the language-level caveat with a note about the neural engine.
+  const neuralCaveat = isNeuralLang
+    ? `Translation via MyMemory neural engine. `
+    : ``;
+
+  const finalCaveats =
+    phraseData?.caveats
+      ? (isPartial
+          ? `Linguistic notes are from this language's flagship documented example. ${phraseData.caveats}`
+          : phraseData.caveats)
+      : `${neuralCaveat}${langAnn?.caveats ?? ""}`;
 
   return {
     language: cfg.name,
@@ -245,15 +268,12 @@ export async function translate(text: string, target: string): Promise<Translati
     tier: cfg.tier,
     family: cfg.family,
     translation: translationText,
-    ipa: annotation?.ipa ?? undefined,
-    tone_notes: annotation?.tone_notes ?? undefined,
-    grammar: annotation?.grammar ?? undefined,
-    morphology: annotation?.morphology ?? undefined,
+    ipa: phraseData?.ipa ?? undefined,
+    tone_notes: phraseData?.tone_notes ?? langAnn?.tone_notes,
+    grammar:    phraseData?.grammar    ?? langAnn?.grammar,
+    morphology: phraseData?.morphology ?? langAnn?.morphology,
     confidence,
-    caveats: isPartial
-      ? "Linguistic notes shown are from this language's flagship documented example. " +
-        (annotation?.caveats ?? "")
-      : (annotation?.caveats ?? undefined),
+    caveats: finalCaveats || undefined,
     engine: isNeuralLang ? "nllb" : "research",
     engine_label: engineLabel,
     model: isNeuralLang ? "MyMemory Neural" : null,

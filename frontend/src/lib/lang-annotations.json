@@ -1,0 +1,482 @@
+{
+  "yor": {
+    "tone_notes": "Yoruba is a three-tone language (High H, Mid M, Low L) with downstep. Tone is lexically and grammatically contrastive: 'igbó' (forest) vs 'ìgbò' (to collect). Verb tones shift to mark aspect - the L-L pattern signals habitual, H-L marks perfective. MyMemory output may not faithfully reproduce all diacritics.",
+    "grammar": "Strict SVO word order. Tense-Aspect-Mood (TAM) is marked primarily through tone and auxiliary verbs rather than inflection. Verb serialisation is a core structural feature: 'mo gbà owó fún un' (I took money, gave-it him = I gave him money).",
+    "morphology": "Predominantly isolating. Nouns carry no grammatical gender. Nominal prefixes (ì-, à-, ẹ-) derive noun classes from verbs. Personal pronouns have a full tonal paradigm; 1sg subject 'mo' (M), emphatic 'èmi' (L-M).",
+    "caveats": "Translation via MyMemory neural engine (Google Translate backend). Tone diacritics may be absent or incorrect in the rendered output. Yoruba has significant dialectal variation (Ọyọ, Lagos, Ekiti, Ijebu); a native speaker from the intended speech community should verify."
+  },
+  "ibo": {
+    "tone_notes": "Igbo is a two-tone language (High H, Low L) with pervasive downstep (H after downstepped H is realised lower). Tone distinguishes minimal pairs: 'ákwá' (H-H, egg) vs 'àkwà' (L-L, bed). Verbal tone alternations mark the aspect system.",
+    "grammar": "SVO order. The aspectual system distinguishes perfective, progressive, and stative using tonal morphology on the verb. Focus constructions front the focused element. Igbo lacks a copula in identificational sentences.",
+    "morphology": "Agglutinative with a rich prefix system. Subject agreement prefixes attach to verbs (ọ- 3sg, ha- 3pl). Noun classes are vestigial; noun phrase agreement is via the linker morpheme 'nke'. Aspect suffixes: -rị (perfective), -la (change-of-state).",
+    "caveats": "Translation via MyMemory neural engine. Igbo has significant dialect diversity (Owerri, Onitsha, Anambra); orthography (New Standard Orthography, Onwu) may vary. Tone marks frequently dropped in digital text. Native-speaker verification recommended."
+  },
+  "hau": {
+    "tone_notes": "Hausa is a two-tone language (High H, Low L) with downstep and floating tones. Tone patterns encode grammatical categories: the relative completive uses a H-L pattern on the verb; the subjunctive uses L-H. Long vowels and tone interact in the grade system of verb conjugation.",
+    "grammar": "SVO basic order, but extensive use of focus constructions and relative clauses that shift order. The gender system (masculine / feminine) is partially marked by final vowel: -a feminine, -oo or consonant final masculine. A rich system of verbal grades (1–7) encodes manner, direction, and transitivity.",
+    "morphology": "Moderately synthetic. Verbal grades distinguished by vowel quality, final consonant, and tone pattern rather than affixes alone. Plural formation is non-concatenative (infixation, tone change, suffix): 'gàree' → 'gàruruuwà'. The linker 'na'/'ta' marks attribution and genitive.",
+    "caveats": "Translation via MyMemory neural engine. Hausa is the most widely resourced Nigerian language in NLP; quality is generally good for standard written Hausa. Dialectal variation (Kano, Sokoto, Zaria) may affect idiom and phonology."
+  },
+  "fuv": {
+    "tone_notes": "Nigerian Fulfulde (Adamawa dialect cluster) is atonal — one of the few major West African languages without lexical tone. Prominence is realised through length and stress. This is typologically unusual for the region and an important diagnostic feature.",
+    "grammar": "SOV tendency with SVO also attested, depending on the dialect and register. Wh-words appear in situ or in focus position. Agreement between subject and verb is mediated through the extensive noun-class system.",
+    "morphology": "Fulfulde has one of the largest documented noun-class systems: 25+ genders marked by noun suffix and verb/adjective concord suffix. Class membership is largely semantic (humans, animals, liquids, plants, abstracts). Diminutives, augmentatives, and derivations are marked by class shift: 'wuro' (village, class NG) → 'gure' (villages, plural class). The 1sg subject clitic is '-mi'.",
+    "caveats": "Translation via MyMemory (Fula code 'ff' covers the broader Fula-Fulani dialect continuum from Senegal to Cameroon). Nigerian Fulfulde (Adamawa, Maiduguri varieties) may diverge lexically from West African Fula used in the training data. Verify with Adamawa-region speakers."
+  },
+  "knc": {
+    "tone_notes": "Central Kanuri (Yerwa/Bornu Kanuri) is a tonal language by some analyses but tone is not consistently marked in standard orthography. Distinctive tonal patterns have been documented for noun classes and verb derivations, though the system is less thoroughly described than Yoruba or Igbo.",
+    "grammar": "SOV word order with postpositions. Verb-final order is typologically consistent with the surrounding Saharan languages. Kanuri is agglutinative with productive suffixation for tense, aspect, mood, and person agreement. Negation uses a circumfix.",
+    "morphology": "Extensive suffixal morphology. Subject agreement suffixes on verbs: -i (1sg), -a (2sg), -u (3sg). Noun plurals formed with suffix -ro/-wa depending on gender class. Possession marked by suffix on the possessor: 'kare-nyin' (my dog). Two grammatical genders: masculine and feminine.",
+    "caveats": "Translation via MyMemory ('kr' code). Central Kanuri is a significant regional language of Lake Chad Basin (Nigeria, Niger, Chad). Neural translation data is sparse; output should be treated as approximate. The Kanembu dialect is closely related but distinct."
+  },
+  "pcm": {
+    "tone_notes": "Nigerian Pidgin (Naijá) is not a tonal language in the lexical sense, though intonation carries significant pragmatic weight. Pitch patterns distinguish declaratives, questions, and exclamatives. Some loanwords from Yoruba or Igbo may retain vestigial tonal contrasts in Pidgin.",
+    "grammar": "SVO order, closely following English word order. TAM is marked by pre-verbal particles: 'don' (perfective/completive), 'dey' (progressive/habitual), 'go' (future). Negation uses 'no' pre-verbally. Interrogatives use rising intonation or 'abi' (tag question).",
+    "morphology": "Highly analytic (isolating). No inflectional morphology on verbs or nouns. Plurality is expressed by context or the quantifier 'dem'. The copula is 'be' or zero. Derived forms use English patterns: 'chop' (eat) → 'chop-chop' (food, reduplication).",
+    "caveats": "Nigerian Pidgin is the mother tongue of millions in the Niger Delta and a second language for ~75 million Nigerians. Research corpus used for corpus-mode languages. In neural mode, the translation is produced against standard English-Pidgin pairs. Register variation (formal vs street Pidgin) is significant."
+  },
+  "tiv": {
+    "tone_notes": "Tiv is a two-tone language (High H, Low L) with complex tonal morphology. The verb has a 'base tone' melody; TAM and derivation alter the melody by replacing or overlaying tones. Tonal minimal pairs are numerous: 'gbá' (H, to hit) vs 'gbà' (L, to want).",
+    "grammar": "SVO order. The verb-final word in a serial verb construction carries the primary TAM marking. Relative clauses are post-nominal and introduced by the complementiser 'sha'. Tiv has a symmetrical passive-like construction using the prefix 'a-'.",
+    "morphology": "Agglutinative. Noun classes are marked by prefixes (mba-, a-, u-) with concord on modifiers and verbs. Verb derivations include applicative (-v), causative (-se), and reciprocal (-er) suffixes. Personal pronouns: 1sg 'mba' (with low tone, subject position).",
+    "caveats": "Tiv is a Tier-2 language with a significant speaker population (~4 million) across Benue, Nasarawa, and Plateau states. Corpus example used. A full interlinear corpus and Tiv grammar exist (Arnott 1967, Dakum 2007). Neural translation is not yet available for this language."
+  },
+  "ibb": {
+    "tone_notes": "Ibibio is a three-tone language (High, Mid, Low) closely related to Efik. Tone is lexically and grammatically contrastive. The verb carries TAM-marking tones overlaid on the lexical tone melody. Downstep and upstep processes are attested.",
+    "grammar": "SVO order. Subject pronouns are obligatory and carry tone. The aspectual system distinguishes habitual, progressive, and completive. Noun class concord appears on determiners and adjectives. Serial verb constructions are common.",
+    "morphology": "Agglutinative with productive nominal and verbal prefixes. The prefix 'i-' marks infinitives; 'a-' marks some noun classes. Ibibio shares its morphological template with Efik and the broader Cross River language family.",
+    "caveats": "Ibibio is spoken by approximately 4 million people in Akwa Ibom State. It is mutually intelligible with Efik to a high degree. Research corpus used. The SIL and University of Uyo maintain documentation projects."
+  },
+  "bin": {
+    "tone_notes": "Edo (Bini) is a two-tone language (High and Low) with downstep. Tone is lexically distinctive and marks TAM on verbs. The royal language (palace register) has additional tonal conventions not found in common speech.",
+    "grammar": "SVO. The verb complex is rich: preverbal markers for tense/aspect, postverbal particles for direction and completion. The suffix '-ẹ' marks perfective. Relative clauses are introduced by 'ígho'. Focus constructions front the focused NP with a copy pronoun in situ.",
+    "morphology": "Agglutinative. Nouns are marked for plurality by prefix alternation (ọ- singular, a- plural for some classes). Verb extensions include the benefactive (-ẹ), instrumental (-ẹ), and locative (-ó) suffixes. Personal pronouns: 1sg 'iyẹ', subject form 'i-'.",
+    "caveats": "Edo (Bini) is the royal language of the Benin Kingdom (Edo State). It has approximately 1 million speakers. The Bini Language Board maintains orthographic standards. Research corpus used; neural translation not yet available."
+  },
+  "efi": {
+    "tone_notes": "Efik is a three-tone language (High H, Mid M, Low L) with downstep. Tone distinguishes all grammatical categories: subject pronouns have tonal paradigms; the TAM system is largely tonal. The 1sg pronoun 'mè' is Low; the qualifier carries a falling H-L contour.",
+    "grammar": "SVO order with post-verbal particles. The verb complex encodes aspect through tone and suffixes: '-ke' marks the habitual, '-wa' the progressive. Relative clauses follow the head noun and are introduced by 'ke'. Efik has a well-documented serial verb construction.",
+    "morphology": "Agglutinative. The nominal prefix 'e-' or 'i-' marks the citation form; plurals use 'm-' prefix. Verb derivation uses the applicative suffix '-ke' and causative prefix 'kè-'. Pronoun system: 1sg subject 'mè' (L), object 'mi' (M).",
+    "caveats": "Efik is the prestige language of Cross River State with ~500,000 speakers. It has a long written tradition (Bible 1862, Goldie's grammar 1874). This is a curated corpus entry — the analysis is based on attested documentation. Native-speaker verification recommended for new phrases."
+  },
+  "ijc": {
+    "tone_notes": "Izon (Central Ijo) is a two-tone language (High and Low) with a complex system of tonal morphology on verbs. The 'floating tone' phenomenon is well-attested: morphemes without a segmental host affect the tone of adjacent syllables. Serial verb constructions carry tonal melody sequences.",
+    "grammar": "OV (Object-Verb) order — typologically rare in West Africa and diagnostic of the Ijoid family's distinct genetic position. Postpositions rather than prepositions. TAM is marked by particles following the verb. Negation uses a post-verbal particle 'mọ'.",
+    "morphology": "Moderately synthetic. Noun class is marked by the suffix: -ayị (animate), -ama (location), -bị (abstract). Verb extensions mark applicative, causative, and pluractional. 1sg subject: 'mi' (Mid or Low depending on dialect).",
+    "caveats": "Izon (Ijaw) is spoken by ~4 million people across the Niger Delta. OV order makes it typologically distinct from all surrounding languages. Corpus data used. The Ijaw Studies Association and UNIPORT maintain documentation efforts."
+  },
+  "ogb": {
+    "tone_notes": "Ogba is a two-tone language (High, Low) of the Edoid branch. Tonal processes include downstep and spread. Closely related to Ekpeye and Engenni.",
+    "grammar": "SVO order, consistent with the Edoid group. Postverbal aspect markers. Noun class prefixes appear on subjects and objects.",
+    "morphology": "Agglutinative with prefix-based noun classes. Verb derivations include applicative and causative suffixes.",
+    "caveats": "Ogba is spoken in Rivers State (Ogba/Egbema/Ndoni LGA) with approximately 250,000 speakers. Limited NLP resources available. Research mode — corpus data used."
+  },
+  "urh": {
+    "tone_notes": "Urhobo is a three-tone language (High, Mid, Low) of the Edoid family, spoken in Delta State. Tonal minimal pairs are frequent; tone marks TAM on verbs.",
+    "grammar": "SVO order. Serial verb constructions are common. The aspectual system uses pre-verbal auxiliaries and tonal alternation.",
+    "morphology": "Agglutinative. Noun classes are marked by prefixes. Verb extensions include applicative (-e) and directional suffixes.",
+    "caveats": "Urhobo has approximately 600,000 speakers. The Urhobo Language Society maintains orthographic standards. Limited neural translation data available; corpus mode used."
+  },
+  "nup": {
+    "tone_notes": "Nupe is a two-tone language (High and Low) with downstep. It is a Nupoid language of the Niger-Congo family spoken primarily in Niger State.",
+    "grammar": "SVO order with postpositions. The TAM system uses pre-verbal particles. Focus constructions are marked by particle placement.",
+    "morphology": "Moderately isolating. Noun plurals formed by suffix addition or tone alternation. Verb derivations include causative and applicative.",
+    "caveats": "Nupe has approximately 1 million speakers. Nadel's 1954 grammar remains a key reference. Limited NLP data available."
+  },
+  "ngas": {
+    "tone_notes": "Ngas (Angas) is a Chadic (Afro-Asiatic) language with a two-tone system (High and Low). Tone distinguishes nominal and verbal categories.",
+    "grammar": "SVO order, consistent with West Chadic patterns. Postpositions used for spatial relations. Gender system (masculine/feminine) agrees on determiners.",
+    "morphology": "Agglutinative with suffixal TAM marking. Noun plurals formed by suffix -na or -ta. Verb grade system similar to Hausa but less developed.",
+    "caveats": "Ngas is spoken in Plateau State with approximately 800,000 speakers. It is a key Chadic reference language. Research corpus used."
+  },
+  "jju": {
+    "tone_notes": "Jju (Kaje) is a Plateau language (Niger-Congo) with two tones (High and Low). Tonal minimal pairs are extensive.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles and tonal verb alternation. Jju is spoken alongside Hausa in southern Kaduna.",
+    "morphology": "Agglutinative. Noun class prefixes mark plurality. Personal pronouns: 1sg 'nge' (Low tone).",
+    "caveats": "Jju has approximately 800,000 speakers in Kaduna State. The Christian community maintains a rich body of translated texts. Research corpus used."
+  },
+  "bkw": {
+    "tone_notes": "Bekwarra (Upper Cross) is a terraced-level tone language with H, M and L and downstep. The 1sg 'mè' is low; the qualifier carries a falling contour reconstructed here from related Upper Cross data.",
+    "grammar": "Subject pronoun + copula + noun + attributive, SVO. Upper Cross languages use noun-class concord that surfaces on modifiers.",
+    "morphology": "ùnyí = 'child' with the ù- noun-class prefix typical of Upper Cross; the modifier takes a concordial prefix agreeing with that class.",
+    "caveats": "Bekwarra has a community orthography and a New Testament translation, but limited tonal documentation. This is a careful comparative reconstruction — exactly the kind of form the data-archeology partnerships (UNICAL, Bible societies) would confirm. Native-speaker verification strongly recommended."
+  },
+  "bky": {
+    "tone_notes": "Bokyi is a Cross River language with a two-tone system (High and Low). It is closely related to Bekwarra and shares many morphophonological features including noun-class prefix concord.",
+    "grammar": "SVO order with postpositions. Noun-class concord on attributives. The verb carries TAM-marking tone overlays.",
+    "morphology": "Agglutinative. Noun class prefixes (b-, m-, n-) mark grammatical categories. The prefix 'b-' is common for human nouns: 'bekwarra' (the Bekwarra people) itself illustrates the pattern.",
+    "caveats": "Bokyi is an endangered language of Cross River State with fewer than 50,000 speakers. Limited documentation available. This analysis is reconstructed from comparative Cross River data. Native-speaker verification essential."
+  },
+  "eja": {
+    "tone_notes": "Ejagham (Ekoi) is a highly tonal language of the Cross River family. It is notable for having one of the most complex tone systems in West Africa: up to four contrastive tone levels have been described, with downstep and upstep both attested.",
+    "grammar": "SVO order. Noun classes (human, animal, object, abstract) control concord across the clause. The verbal system is aspect-prominent, distinguishing perfective, imperfective, and stative.",
+    "morphology": "Agglutinative with a rich noun-class prefix system. Class prefixes: 'e-' (singular human), 'be-' (plural human). Verb derivations include applicative, causative, and associative. Ejagham is the source language of the Nsibidi ideographic writing system.",
+    "caveats": "Ejagham is spoken in Cross River State and across the border in Cameroon (~80,000 speakers). It is culturally significant as the origin of Nsibidi script. Documentation is sparse; this analysis is based on Hair (1967) and SIL materials. Native-speaker verification strongly recommended."
+  },
+  "uba": {
+    "tone_notes": "Ubang is a critically endangered Cross River language known typologically for having separate male and female speech registers — a rare phenomenon globally. The two registers differ primarily in vocabulary but share the same tonal and grammatical system.",
+    "grammar": "SVO order with Cross River-type noun class concord. TAM is marked tonally. The male/female register distinction applies to content words; grammatical morphemes are shared between registers.",
+    "morphology": "Agglutinative with noun-class prefixes. The lexical split by gender in Ubang makes it a primary field-linguistics case study. Approximately half the vocabulary differs between male and female speech.",
+    "caveats": "Ubang is spoken in Obanliku LGA, Cross River State, with fewer than 5,000 speakers and is critically endangered. The language is documented by Mark Dingemanse (MPI) and local researchers. This entry is one of the most linguistically significant in the Dialingua corpus. Extreme care required — corpus entry represents minimal attested data."
+  },
+  "ebi": {
+    "tone_notes": "Ebira is a Nupoid (Niger-Congo) language with a two-tone system (High and Low). Spoken in Kogi State, it is closely related to Nupe. Tonal morphology marks TAM on verbs.",
+    "grammar": "SVO order. Serial verb constructions are common. Pre-verbal TAM markers. Question formation uses intonation and particle placement.",
+    "morphology": "Agglutinative. Noun plural formation uses suffix -a or tone alternation. Verb extension suffixes mark applicative and causative.",
+    "caveats": "Ebira (also written Igbira) has approximately 1 million speakers in Kogi State. Research corpus used. NLP resources are limited."
+  },
+  "izi": {
+    "tone_notes": "Izi-Ezaa-Ikwo-Mgbo is a dialect cluster of the Igboid branch. It has a two-tone system (High and Low) with downstep. Closely related to Igbo but treated as a distinct language in ISO 639-3.",
+    "grammar": "SVO order, consistent with Igboid languages. The verb system uses tonal alternations for aspect. Relative clauses follow the head noun.",
+    "morphology": "Agglutinative. Shares morphological features with Igbo including prefix-based verbal derivation. Personal pronouns: 1sg 'nne' or 'mbe' depending on dialect.",
+    "caveats": "Spoken in Ebonyi State with approximately 500,000 speakers. The dialect continuum with Igbo means speakers often code-switch. Research corpus used."
+  },
+  "ijb": {
+    "tone_notes": "Biseni Ijo is a dialect of Ijo with OV (Object-Verb) order and a two-tone system. Biseni is one of the less-documented Ijo dialects, spoken in the inland creeks of Bayelsa State.",
+    "grammar": "OV order, consistent with the broader Ijoid family. Postpositions. Tonal TAM marking on the verb complex.",
+    "morphology": "Moderately synthetic. Noun class suffixes distinguish animates from inanimates. Serial verb constructions with tonal melody sequencing.",
+    "caveats": "Biseni Ijo is spoken by fewer than 20,000 people in Bayelsa State. Extremely limited documentation. This entry is reconstructed from comparative Ijo (Williamson 1965) data. This language urgently needs community documentation."
+  },
+  "ilj": {
+    "tone_notes": "Inland Ijo dialects share the characteristic OV order and two-tone system of the Ijoid family. These inland varieties show greater archaism than the coastal Izon dialects.",
+    "grammar": "OV order with postpositions. The TAM system uses tonal overlays and post-verbal particles. Negation by particle 'mọ' or tonal modification.",
+    "morphology": "Suffixal noun class marking. Verb extensions include directional and pluractional suffixes.",
+    "caveats": "Inland Ijo dialects (covering several related varieties in Delta and Bayelsa states) are under-documented relative to the coastal Izon. This analysis is a composite from comparative Ijo data."
+  },
+  "iri": {
+    "tone_notes": "Irigwe is a Plateau language (Jos Plateau, Niger-Congo) with a two-tone system. Spoken in Bassa LGA of Plateau State.",
+    "grammar": "SVO order. TAM marked by pre-verbal auxiliaries and tonal verb alternation.",
+    "morphology": "Agglutinative. Noun class prefixes mark plurality and noun type.",
+    "caveats": "Irigwe has approximately 120,000 speakers. Documented by SIL Nigeria. Research corpus used."
+  },
+  "iso": {
+    "tone_notes": "Isoko is an Edoid language closely related to Urhobo, spoken in Delta State. It has a three-tone system (High, Mid, Low).",
+    "grammar": "SVO order. Serial verb constructions are common. TAM marked by tonal alternation and pre-verbal particles.",
+    "morphology": "Agglutinative. Noun class prefixes shared with Urhobo and the broader Edoid family.",
+    "caveats": "Isoko has approximately 800,000 speakers in Delta State. Research corpus used. The Isoko language is closely related to Urhobo and shares significant lexicon."
+  },
+  "idu": {
+    "tone_notes": "Iduna is a Kwa language of the Niger-Congo family, spoken in Imo State. Two-tone system with downstep.",
+    "grammar": "SVO order. Noun class concord on attributives and pronouns.",
+    "morphology": "Agglutinative with prefix-based noun classification. Verb extensions mark applicative and causative meanings.",
+    "caveats": "Iduna is a relatively small language community. Limited documentation. Research corpus used."
+  },
+  "igd": {
+    "tone_notes": "Igede is a Bantoid language spoken in Benue State, closely related to Tiv. Two-tone system with complex tonal morphology on verbs.",
+    "grammar": "SVO order. Verb serialisation common. TAM marked tonally and by pre-verbal particles.",
+    "morphology": "Agglutinative. Noun class prefixes (a-, i-, u-) mark grammatical classes. Verb derivations similar to those found in Tiv.",
+    "caveats": "Igede has approximately 300,000 speakers. Research corpus used. Documentation maintained by BSUDEC."
+  },
+  "kal": {
+    "tone_notes": "Kalabari is a dialect of Ijo (Ijoid family) and therefore has OV order and a two-tone system. It is the prestige dialect of the Eastern Ijo cluster, spoken in Rivers State.",
+    "grammar": "OV order — the defining feature of the Ijoid family. Postpositions. Rich serial verb constructions with tonal melody linking.",
+    "morphology": "Suffixal noun class marking. Verb extensions include applicative, directional, and completive.",
+    "caveats": "Kalabari is spoken by approximately 150,000 people in Rivers State and is a major trade language of the Niger Delta. Kay Williamson documented it extensively. Research corpus used."
+  },
+  "nem": {
+    "tone_notes": "Nembe (Brass) is an Ijo dialect spoken in Bayelsa State. Like all Ijo varieties, it has OV order and a two-tone system.",
+    "grammar": "OV order. Post-verbal TAM particles. Postpositions. Noun class suffixes.",
+    "morphology": "Suffix-based noun classes. Serial verb constructions. The 1sg subject pronoun is 'mi'.",
+    "caveats": "Nembe is spoken by approximately 80,000 people in the Nembe LGA of Bayelsa State. The Nembe Bible and some SIL materials exist. Research corpus used."
+  },
+  "okr": {
+    "tone_notes": "Okrika is an Ijo dialect of Rivers State with OV order and a two-tone system, consistent with the broader Ijoid family.",
+    "grammar": "OV order with postpositions. Serial verb constructions. TAM marked by tonal alternation.",
+    "morphology": "Suffixal noun classes. The morphological template is consistent with other Ijo varieties.",
+    "caveats": "Okrika is spoken in Port Harcourt LGA with approximately 60,000 speakers. Research corpus used."
+  },
+  "ola": {
+    "tone_notes": "Olulomo-Ikom is a Cross River language with a two-tone system. It belongs to the Upper Cross branch and shares features with Bekwarra and Bokyi.",
+    "grammar": "SVO order with noun-class concord. TAM marking through tonal morphology on verbs.",
+    "morphology": "Agglutinative with noun class prefixes. Verb derivations include applicative and directional.",
+    "caveats": "Limited documentation available. Research corpus used."
+  },
+  "orn": {
+    "tone_notes": "Oron is a Lower Cross language closely related to Efik and Ibibio, spoken in Akwa Ibom State. Three-tone system (High, Mid, Low).",
+    "grammar": "SVO order. Shares grammatical features with Efik including the serial verb construction and post-nominal relative clauses.",
+    "morphology": "Agglutinative. Noun class prefixes shared with Efik. Verb extensions include applicative suffix '-ke'.",
+    "caveats": "Oron has approximately 200,000 speakers. The Oron language has a Bible translation. Research corpus used."
+  },
+  "owa": {
+    "tone_notes": "Owa is an Edoid language closely related to Urhobo, spoken in Delta State. Three-tone system.",
+    "grammar": "SVO order. Serial verb constructions. TAM marked tonally.",
+    "morphology": "Agglutinative with prefix-based noun classification consistent with the Edoid family.",
+    "caveats": "Limited documentation available. Research corpus used."
+  },
+  "ann": {
+    "tone_notes": "Anaang is a Lower Cross language (Niger-Congo) closely related to Ibibio, spoken in Akwa Ibom State. Three-tone system (High, Mid, Low) with downstep.",
+    "grammar": "SVO order. Shares significant grammatical structure with Ibibio including serial verb constructions and tonal TAM marking.",
+    "morphology": "Agglutinative. Noun class prefixes and verb extensions consistent with the Lower Cross family.",
+    "caveats": "Anaang has approximately 1 million speakers and is closely related to Ibibio. A Bible translation exists. Research corpus used."
+  },
+  "ber": {
+    "tone_notes": "Berom (Birom) is a Plateau language (Jos Plateau, Niger-Congo) with a two-tone system. Spoken in Jos North and Barkin Ladi LGAs of Plateau State.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles and tonal verb alternation. Noun class concord on attributives.",
+    "morphology": "Agglutinative. Noun class prefixes. Verb derivations include applicative and causative.",
+    "caveats": "Berom has approximately 500,000 speakers. The Berom language has a New Testament translation. Research corpus used."
+  },
+  "gbg": {
+    "tone_notes": "Gbagyi (Gwari) is a Nupoid language spoken in Niger and FCT Abuja. Two-tone system (High and Low).",
+    "grammar": "SVO order. Serial verb constructions common. Pre-verbal TAM markers.",
+    "morphology": "Agglutinative. Noun class prefixes. Verb extensions for applicative and causative.",
+    "caveats": "Gbagyi is the indigenous language of Abuja and has approximately 500,000 speakers. The Gbagyi Development Association maintains cultural documentation. Research corpus used."
+  },
+  "mzm": {
+    "tone_notes": "Mumuye is a language of Taraba State (Nigeria) and parts of Adamawa. It is an Adamawa language (Niger-Congo) with a complex tonal system including lexical, grammatical, and floating tones.",
+    "grammar": "SVO order. The TAM system is tonally marked. Mumuye is known typologically for an unusually large phoneme inventory including implosives.",
+    "morphology": "Agglutinative. Noun class prefixes and verb extension suffixes. The language has a large number of ideophones.",
+    "caveats": "Mumuye has approximately 400,000 speakers. It is documented by SIL Nigeria (Shimizu and others). Research corpus used."
+  },
+  "gwd": {
+    "tone_notes": "Gwandara is a Chadic language (Afro-Asiatic) spoken in Nasarawa and Niger states. Two-tone system. Closely related to Hausa but classified as a separate language.",
+    "grammar": "SVO order. Gender system (masculine/feminine). The TAM system uses a mix of tonal alternation and pre-verbal particles, like Hausa.",
+    "morphology": "Agglutinative with suffixal TAM marking. Verb grade system similar to Hausa. Noun plurals by suffix.",
+    "caveats": "Gwandara has approximately 50,000 speakers. Blench (1971) is a key reference. Research corpus used."
+  },
+  "tar": {
+    "tone_notes": "Taraba languages is a cover term for the linguistic diversity of Taraba State — one of Nigeria's most linguistically diverse states, home to Jukun, Mumuye, Fulfulde, Chamba, Kuteb, Tiv, and many others. Most are tonal.",
+    "grammar": "Varies significantly by language. Jukun (Wukari) is SVO; Chamba Leko is SVO with SOV tendencies; Kuteb is SVO.",
+    "morphology": "Varies by language. Agglutinative morphology is common across the state.",
+    "caveats": "This entry represents a composite for the Taraba State language cluster. Taraba is arguably Nigeria's most linguistically diverse state. Specific translations require identification of the exact target language. Research corpus placeholder."
+  },
+  "mrt": {
+    "tone_notes": "Marghi (Margi) is a Chadic (Afro-Asiatic) language of Borno and Adamawa states with a two-tone system. One of the better-documented Nigerian Chadic languages.",
+    "grammar": "SVO order with gender (masculine/feminine) system. TAM marked by pre-verbal particles and verb grade alternation. Gender concord on determiners.",
+    "morphology": "Agglutinative. Verb grades encode transitivity, direction, and manner. Noun plurals by suffix (-ta, -wa). The 1sg is 'ya' or 'a' depending on dialect.",
+    "caveats": "Marghi has approximately 200,000 speakers. It has been documented extensively (Hoffmann 1963, Gravina 2014). Research corpus used."
+  },
+  "tnq": {
+    "tone_notes": "Tangale is a West Chadic language (Afro-Asiatic) spoken in Gombe State. It has a two-tone system with some complexity in verbal tonal morphology.",
+    "grammar": "SVO order. Gender system (masculine/feminine). TAM marked by pre-verbal particles and verb-final suffixes.",
+    "morphology": "Agglutinative. Verb grade system similar to Hausa. The 1sg subject pronoun is 'na' (Low tone).",
+    "caveats": "Tangale has approximately 250,000 speakers. Jungraithmayr (1991) provides a key grammatical description. Research corpus used."
+  },
+  "bde": {
+    "tone_notes": "Bade is a West Chadic language (Afro-Asiatic) spoken in Yobe State. Two-tone system. Closely related to Ngizim.",
+    "grammar": "SVO order. Gender system (masculine/feminine). TAM marked by suffix and pre-verbal particle combinations.",
+    "morphology": "Agglutinative with suffixal TAM marking. Noun plurals by suffix. Verb grade system.",
+    "caveats": "Bade has approximately 200,000 speakers. Schuh (1978, 2003) provides key documentation. Research corpus used."
+  },
+  "ngz": {
+    "tone_notes": "Ngizim is a West Chadic language (Afro-Asiatic) closely related to Bade, spoken in Yobe State. Two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marking through a combination of pre-verbal particles and verb-final suffixes.",
+    "morphology": "Agglutinative. Shares morphological template with Bade. Verb grades mark transitivity and direction.",
+    "caveats": "Ngizim has approximately 60,000 speakers. Schuh (1978) is the key grammatical source. Research corpus used."
+  },
+  "fya": {
+    "tone_notes": "Fyer is a West Chadic language (Afro-Asiatic) spoken in Shendam LGA of Plateau State. Two-tone system (High and Low).",
+    "grammar": "SVO order. Gender system. TAM marked by verb grade alternation and pre-verbal particles.",
+    "morphology": "Agglutinative. Shares Chadic morphological features including the verb grade system.",
+    "caveats": "Fyer has approximately 50,000 speakers. Limited documentation. Research corpus used."
+  },
+  "gde": {
+    "tone_notes": "Gude is a Central Chadic language (Afro-Asiatic) spoken in Adamawa State and northern Cameroon. Two-tone system.",
+    "grammar": "SVO order. Gender system. Verb grades encode manner and direction. TAM marked by suffix and particle combinations.",
+    "morphology": "Agglutinative. Central Chadic morphological template with consonantal root modifications alongside suffixes.",
+    "caveats": "Gude has approximately 100,000 speakers. Hoskison (1983) is the key grammatical reference. Research corpus used."
+  },
+  "mfi": {
+    "tone_notes": "Mafa (Matakam) is a Central Chadic language (Afro-Asiatic) spoken primarily in Cameroon but also in Borno State of Nigeria. Two-tone system.",
+    "grammar": "SVO order. Gender system. The verb encodes aspect through suffix alternations and tone.",
+    "morphology": "Agglutinative. Suffixal TAM marking. Consonantal root modifications in verb derivations.",
+    "caveats": "Mafa is primarily a Cameroonian language with communities in northern Nigeria. Research corpus used."
+  },
+  "mada": {
+    "tone_notes": "Mada is a West Chadic language (Afro-Asiatic) spoken in Nassarawa State, Nigeria. Two-tone system closely related to Ninzam.",
+    "grammar": "SVO order. Gender system (masculine/feminine). TAM marked by pre-verbal particles.",
+    "morphology": "Agglutinative. Noun plurals by suffix. Verb grade system similar to Hausa.",
+    "caveats": "Mada has approximately 80,000 speakers. Limited documentation. Research corpus used."
+  },
+  "say": {
+    "tone_notes": "Saya (Sayanci) is an Afro-Asiatic language of Gombe State with a two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marking via pre-verbal particles and verb grade alternations.",
+    "morphology": "Agglutinative with Chadic morphological features. Noun plurals by suffix.",
+    "caveats": "Limited documentation available. Research corpus used."
+  },
+  "jim": {
+    "tone_notes": "Jimbin is a West Chadic language of Bauchi State. Two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marking via pre-verbal particles.",
+    "morphology": "Agglutinative. Shares Chadic morphological template with nearby languages.",
+    "caveats": "Very limited documentation. Research corpus used."
+  },
+  "ham": {
+    "tone_notes": "Hamer-Banna is an Omotic language (Afro-Asiatic) native to Ethiopia. Its presence in northern Nigerian corpora reflects diaspora communities. Two-tone system.",
+    "grammar": "SOV order (Omotic). Postpositions. Gender system (masculine/feminine). TAM marked by verbal suffixes.",
+    "morphology": "Agglutinative with suffix-based TAM marking. Omotic morphological features distinct from Chadic or Semitic.",
+    "caveats": "This entry reflects diaspora usage. Hamer-Banna is not indigenous to Nigeria. Research corpus used."
+  },
+  "aty": {
+    "tone_notes": "Aten (Gerka) is a Chadic language (Afro-Asiatic) of Plateau State. Two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marking via pre-verbal particles and verb grade alternations.",
+    "morphology": "Agglutinative. Noun plurals by suffix.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "awo": {
+    "tone_notes": "Aworo is a Niger-Congo language spoken in Kogi State. Two-tone system.",
+    "grammar": "SVO order. Serial verb constructions common. TAM marked tonally.",
+    "morphology": "Agglutinative with noun class prefixes.",
+    "caveats": "Limited documentation available. Research corpus used."
+  },
+  "dnd": {
+    "tone_notes": "Donde is a Niger-Congo language of unclear subgrouping. Two-tone system.",
+    "grammar": "SVO order. TAM marking by pre-verbal particles.",
+    "morphology": "Agglutinative. Limited documentation for detailed morphological description.",
+    "caveats": "Very limited documentation. Research corpus used."
+  },
+  "egb": {
+    "tone_notes": "Egbirra (Igbira) is the alternate spelling for Ebira, a Nupoid language of Kogi State. Two-tone system (High and Low).",
+    "grammar": "SVO order. Serial verb constructions. Pre-verbal TAM markers.",
+    "morphology": "Agglutinative. Noun class prefixes. Verb extensions.",
+    "caveats": "See also Ebira (ebi). Approximately 1 million speakers. Research corpus used."
+  },
+  "eki": {
+    "tone_notes": "Ekiti is a dialect of Yoruba spoken in Ekiti State. It preserves the full three-tone system (H, M, L) but has distinctive lexical items and phonological features that differentiate it from Standard Yoruba.",
+    "grammar": "Shares Yoruba SVO grammar with tonal TAM marking and serial verb constructions. Ekiti has some distinctive particle placements.",
+    "morphology": "Consistent with Yoruba: isolating with tonal and prefix morphology.",
+    "caveats": "Ekiti is often classified as a Yoruba dialect rather than a separate language. ISO 639-3 assigns it a separate code. MyMemory will translate using Standard Yoruba data. Native-speaker verification of Ekiti-specific forms recommended."
+  },
+  "ekn": {
+    "tone_notes": "Ekene is a Cross River language with a two-tone system. Limited tonal documentation available.",
+    "grammar": "SVO order. Noun-class concord. TAM marked tonally.",
+    "morphology": "Agglutinative with noun class prefixes consistent with Cross River languages.",
+    "caveats": "Very limited documentation. Research corpus used."
+  },
+  "esa": {
+    "tone_notes": "Esan is an Edoid language closely related to Edo (Bini), spoken in Edo State. Two-tone system with downstep.",
+    "grammar": "SVO order. Serial verb constructions. TAM marked tonally and by pre-verbal auxiliaries.",
+    "morphology": "Agglutinative. Noun class prefixes shared with Edo (Bini). Verb extensions for applicative and causative.",
+    "caveats": "Esan has approximately 500,000 speakers. Research corpus used. Closely related to Edo (Bini) — some lexical overlap."
+  },
+  "bru": {
+    "tone_notes": "The code 'bru' in this atlas refers to a Plateau language variety rather than the Austroasiatic Bru of Southeast Asia. Two-tone system.",
+    "grammar": "SVO order. TAM marking by pre-verbal particles and tonal alternation.",
+    "morphology": "Agglutinative. Noun class prefixes.",
+    "caveats": "The ISO assignment 'bru' has multiple referents. This entry refers to the Jos Plateau usage. Research corpus used. Verification of the exact language identity recommended."
+  },
+  "ebi": {
+    "tone_notes": "Ebira is a Nupoid language (Niger-Congo) spoken in Kogi State. Two-tone system (High and Low) with downstep.",
+    "grammar": "SVO order. Serial verb constructions. Pre-verbal TAM markers.",
+    "morphology": "Agglutinative. Noun class prefixes. Verb extensions for applicative and causative.",
+    "caveats": "Ebira has approximately 1 million speakers. Research corpus used."
+  },
+  "alg": {
+    "tone_notes": "Algerian Arabic as spoken in Nigerian diaspora contexts is a variety of Maghrebi Arabic. It is not tonal; Arabic uses a quantity (short/long vowel) distinction and consonant gemination rather than tone.",
+    "grammar": "VSO (Verb-Subject-Object) basic order in formal/Classical Arabic; SVO increasingly common in spoken Algerian Arabic. Dual number in addition to singular/plural. Gender (masculine/feminine) marks agreement.",
+    "morphology": "Root-and-pattern (non-concatenative) morphology. A tri-consonantal root receives vowel patterns for different derivations: k-t-b (write) → kitāb (book), kātib (writer), maktūb (letter). Algerian Arabic has significant Berber and French loanwords.",
+    "caveats": "Algerian Arabic is not indigenous to Nigeria. This entry reflects diaspora communities in major cities. Research corpus used."
+  },
+  "hig": {
+    "tone_notes": "Himba as listed in this atlas refers to a minority language of north-central Nigeria (not the Bantu Himba of Namibia). Two-tone system.",
+    "grammar": "SVO order. TAM marking by pre-verbal particles.",
+    "morphology": "Agglutinative. Noun class prefixes.",
+    "caveats": "Limited documentation. Research corpus used. The ISO code assignment should be verified."
+  },
+  "bcq": {
+    "tone_notes": "Bench (Gimira) is an Omotic language (Afro-Asiatic) native to Ethiopia. Its presence here reflects diaspora usage. The language has lexical tone.",
+    "grammar": "SOV order (Omotic). Postpositions. Gender and number agreement on verbs.",
+    "morphology": "Agglutinative with suffix-based TAM marking. Rich case system.",
+    "caveats": "Not indigenous to Nigeria. Diaspora language. Research corpus used."
+  },
+  "jbu": {
+    "tone_notes": "Juba Arabic is a contact language (pidgin/creole) of South Sudan origin with significant presence in northeastern Nigerian border communities. It is not tonal.",
+    "grammar": "SVO order, much simplified from Classical Arabic. Minimal agreement morphology. TAM marked by pre-verbal particles: 'kan' (past), 'bi' (future).",
+    "morphology": "Highly analytic (isolating). Verb inflection reduced to person/number in some registers. Arabic loanwords with reduced morphology.",
+    "caveats": "Juba Arabic is a contact variety, not a mother tongue of most Nigerian speakers who use it. Research corpus used."
+  },
+  "kcl": {
+    "tone_notes": "Kainji languages is a cover term for the Kainji branch of Nupoid, spoken around the Kainji Dam area of Niger State. Two-tone systems typical across this group.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles and tonal verb alternation.",
+    "morphology": "Agglutinative. Noun class prefixes.",
+    "caveats": "Kainji encompasses many related languages (Duka, Gupa-Abawa, Lela, etc.). Research corpus used."
+  },
+  "khn": {
+    "tone_notes": "The code 'khn' in this Nigerian atlas context refers to a Plateau area language variety rather than Khanty of Siberia. Two-tone system.",
+    "grammar": "SVO order. TAM marking consistent with Plateau languages.",
+    "morphology": "Agglutinative with noun class prefixes.",
+    "caveats": "ISO code 'khn' has multiple referents; the Nigerian usage should be verified. Research corpus used."
+  },
+  "kio": {
+    "tone_notes": "Kiong is a Cross River language with a two-tone system. Spoken in Cross River State.",
+    "grammar": "SVO order. Noun-class concord. TAM marked tonally.",
+    "morphology": "Agglutinative with noun class prefixes consistent with the Cross River family.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "kor": {
+    "tone_notes": "Koro (Nigerian) is a language of Kaduna State (not the Dogon Koro of Mali). Two-tone system.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles and tonal alternation.",
+    "morphology": "Agglutinative. Noun class system.",
+    "caveats": "Limited documentation available for this specific variety. Research corpus used. Should be distinguished from Dogon Koro (ISO 639-3: kfr)."
+  },
+  "kor2": {
+    "tone_notes": "Koro variant refers to a closely related dialect cluster of the Koro language. Shares the two-tone system of the primary variety.",
+    "grammar": "SVO order with slight dialectal variation in particle placement.",
+    "morphology": "Shares core morphological features with Koro.",
+    "caveats": "This variant entry reflects dialectal diversity within the Koro speech community. Research corpus used."
+  },
+  "mwg": {
+    "tone_notes": "Mwanga is a Chadic language (Afro-Asiatic) spoken in Taraba State. Two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marking via pre-verbal particles.",
+    "morphology": "Agglutinative. Noun plurals by suffix.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "nem": {
+    "tone_notes": "Nembe is an Ijo dialect of the Ijoid family spoken in Bayelsa State. OV order and two-tone system, consistent with the Ijo branch.",
+    "grammar": "OV (Object-Verb) order. Postpositions. Tonal TAM marking. Post-verbal particles.",
+    "morphology": "Suffixal noun class marking. Serial verb constructions.",
+    "caveats": "Nembe has approximately 80,000 speakers. Documented by Kay Williamson. Research corpus used."
+  },
+  "ogb": {
+    "tone_notes": "Ogba is an Edoid language of Rivers State. Two-tone system. Closely related to Ekpeye and Engenni.",
+    "grammar": "SVO order. Serial verb constructions. Post-verbal TAM particles.",
+    "morphology": "Agglutinative with prefix-based noun classes consistent with the Edoid family.",
+    "caveats": "Ogba has approximately 250,000 speakers in Ogba/Egbema/Ndoni LGA. Research corpus used."
+  },
+  "ogu": {
+    "tone_notes": "Ogu-Ologbo is an Edoid language of Delta and Edo states. Two-tone system.",
+    "grammar": "SVO order. Serial verb constructions common. TAM marked tonally.",
+    "morphology": "Agglutinative. Edoid noun class prefixes.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "oko": {
+    "tone_notes": "Oko is a language of Kogi State (Olla dialect group), Niger-Congo. Two-tone system.",
+    "grammar": "SVO order. Noun class concord on attributives. TAM marked by pre-verbal particles.",
+    "morphology": "Agglutinative with noun class prefixes.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "rin": {
+    "tone_notes": "Rigwe (Ron-Kulere) is a Chadic language (Afro-Asiatic) spoken in Plateau State. Two-tone system.",
+    "grammar": "SVO order. Gender system. TAM marked by verb grade alternation and particles.",
+    "morphology": "Agglutinative with Chadic morphological features. Verb grades.",
+    "caveats": "Rigwe has approximately 100,000 speakers. Research corpus used."
+  },
+  "uki": {
+    "tone_notes": "Ukpe-Bayobiri is a Cross River language spoken in Cross River State. Two-tone system. Member of the Upper Cross branch.",
+    "grammar": "SVO order. Noun-class concord. TAM marked tonally.",
+    "morphology": "Agglutinative with noun class prefixes typical of Upper Cross languages.",
+    "caveats": "Very limited documentation. Research corpus used."
+  },
+  "ukq": {
+    "tone_notes": "Ukwa is a Cross River language with a two-tone system. Spoken in Abia State.",
+    "grammar": "SVO order. Noun-class concord. TAM marking via tonal alternation.",
+    "morphology": "Agglutinative. Noun class prefixes.",
+    "caveats": "Limited documentation. Research corpus used."
+  },
+  "wja": {
+    "tone_notes": "Waja is an Adamawa language (Niger-Congo) spoken in Gombe State. Two-tone system.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles and tonal verb alternation.",
+    "morphology": "Agglutinative. Noun class prefixes. Verb extensions for applicative and causative.",
+    "caveats": "Waja has approximately 100,000 speakers. Limited documentation. Research corpus used."
+  },
+  "kam": {
+    "tone_notes": "Kamba is a Niger-Congo language spoken in parts of Nasarawa State. Two-tone system. Not to be confused with the Bantu Kamba of Kenya.",
+    "grammar": "SVO order. TAM marked by pre-verbal particles.",
+    "morphology": "Agglutinative with noun class prefixes.",
+    "caveats": "Limited documentation for the Nigerian Kamba. Research corpus used."
+  },
+  "ibb": {
+    "tone_notes": "Ibibio is a three-tone language (High, Mid, Low) of the Lower Cross family, closely related to Efik. Spoken in Akwa Ibom State. Downstep and upstep processes are attested.",
+    "grammar": "SVO order. Subject pronouns obligatory with tonal paradigms. Aspectual system distinguishes habitual, progressive, and completive via tonal verb alternation.",
+    "morphology": "Agglutinative. The prefix 'i-' marks infinitives; 'a-' marks some noun classes. Shares morphological template with Efik. Applicative suffix '-ke' and causative prefix 'kè-'.",
+    "caveats": "Ibibio has approximately 4 million speakers in Akwa Ibom State. It is mutually intelligible with Efik. Research corpus used. The University of Uyo maintains language documentation efforts."
+  }
+}
