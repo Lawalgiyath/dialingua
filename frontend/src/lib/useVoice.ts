@@ -35,6 +35,7 @@ export function useVoice(): VoiceResult {
   useEffect(() => {
     // Initialize a hidden audio element for our custom TTS engine
     const audio = new Audio();
+    audio.setAttribute("referrerpolicy", "no-referrer");
     audio.addEventListener("play", () => setSpeaking(true));
     audio.addEventListener("ended", () => setSpeaking(false));
     audio.addEventListener("error", () => setSpeaking(false));
