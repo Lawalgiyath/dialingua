@@ -1,0 +1,183 @@
+{
+  "_note": "Curated worked examples for research-mode (Tier 2-4) languages, keyed by atlas language code. The first entry per language is its flagship demo phrase, used as a graceful fallback when no exact match exists. Authored from documentary/comparative sources; confidence is reported honestly and native-speaker verification is always recommended. When ANTHROPIC_API_KEY is set, Claude supersedes this corpus.",
+
+  "efi": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Mmè di eti eyenọwọọn̄ọ",
+      "ipa": "/m̩.mè - dì - é.tì - é.jèn.ɔ.wɔ.ɔ́n.ɔ/",
+      "tone_notes": "Efik is a register-tone language with high (H) and low (L) tones plus downstep. The 1sg subject 'mmè' carries a low tone; the equative copula 'di' is typically low. 'eti' (good) is H-L, while the noun 'eyen' (child) shows the characteristic H tone on the prefixed vowel. Tone on the compound 'eyenọwọọn̄ọ' (male child) is partly reconstructed.",
+      "grammar": "Efik uses a pronominal copula construction for equative clauses: the subject pronoun precedes the copula 'di' in strict SVO order. There is no separate indefinite article; definiteness is contextual.",
+      "morphology": "eyen = 'child'; the modifier -ọwọọn̄ọ ('male') compounds to specify 'boy'. The initial e- on many nouns is a fossilised noun-class prefix common across the Lower Cross group.",
+      "confidence": "medium",
+      "caveats": "Efik is comparatively well-documented (long Bible-translation tradition), but tone marking on common nouns is inconsistently recorded across sources. 'eti' vs 'ọfọn' for 'good' varies by register. Native-speaker verification recommended."
+    },
+    {
+      "en": "Good morning",
+      "translation": "Emesiere",
+      "ipa": "/è.mè.sì.è.rè/",
+      "tone_notes": "A lexicalised greeting; the tonal melody is largely level-low with a slight rise on the penult. Greetings often resist the regular tone rules of the rest of the grammar.",
+      "grammar": "Fixed greeting formula, not analysable as a productive clause. Reply is typically 'Emesiere' echoed back.",
+      "morphology": "Historically related to a root for 'waking / dawn'; now frozen as a single greeting word.",
+      "confidence": "high",
+      "caveats": "Common, well-attested greeting."
+    },
+    {
+      "en": "Thank you",
+      "translation": "Sọsọ̀ngọ",
+      "ipa": "/sɔ.sɔ̀.ŋɔ/",
+      "tone_notes": "Reduplicated form with a low tone on the medial syllable. Reduplication intensifies the expression of gratitude.",
+      "grammar": "Interjection; stands alone or precedes an addressee term.",
+      "morphology": "Reduplication of the root sọng- ('thank'), a productive intensification strategy in Efik.",
+      "confidence": "high",
+      "caveats": "Widely used; spelling 'sọsọng' also seen."
+    }
+  ],
+
+  "tiv": [
+    {
+      "en": "I'm a good boy",
+      "translation": "M ngu wanye u dedoo",
+      "ipa": "/m̩ - ᵑɡù - wàɲè - ù - dèdòː/",
+      "tone_notes": "Tiv has a two-tone system (H, L) with grammatically significant tone on verbs and pronouns. The progressive/existential marker 'ngu' carries a contrastive tonal melody; 'dedoo' (good) tends to be L-H with a long final vowel.",
+      "grammar": "'M ngu ... u dedoo' uses the copular/existential 'ngu' ('to be, to exist') followed by the noun and a qualifier introduced by the linker 'u'. Tiv is SVO with rich verbal extensions.",
+      "morphology": "wan = 'child'; wanye = the singular form ('a child/boy'). 'u dedoo' = relative-linker + quality root 'doo' ('be good/nice'), reduplicated/lengthened for the attributive sense.",
+      "confidence": "low",
+      "caveats": "Tiv (Tivoid, ~5M speakers) has grammars and Bible translations, but consistent tone-marked everyday corpora are scarce. This rendering is a comparative reconstruction; a Tiv speaker should verify the copula choice and the 'good' attributive form."
+    },
+    {
+      "en": "Thank you",
+      "translation": "M sugh u",
+      "ipa": "/m̩ - sùɣ - ù/",
+      "tone_notes": "Low-toned 1sg 'm' plus the verb 'sugh' (thank/praise) and 2sg object 'u'.",
+      "grammar": "Literally 'I thank you' — a full SVO clause used as the everyday expression of gratitude.",
+      "morphology": "sugh = verb root 'to thank/appreciate'; u = 2sg object pronoun.",
+      "confidence": "low",
+      "caveats": "Verb-form and tone need native verification."
+    }
+  ],
+
+  "ijc": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Erí tọb́ọụ dụọ̀ wéri",
+      "ipa": "/è.rí - tɔ́.bɔ.ụ - dʊ.ɔ̀ - wé.rì/",
+      "tone_notes": "Izon (Ijoid) is tonal with H and L tones that distinguish lexical items. Pronoun 'erí' (1sg) is typically high. Tone on the qualifier for 'good' is tentative here.",
+      "grammar": "Ijoid languages are notably SOV — unusual within Niger-Congo — so the verb/qualifier comes clause-finally, unlike the SVO of Yoruba or Efik. This typological difference is exactly why a shared backbone needs language-specific adapters.",
+      "morphology": "tọbọụ = 'child'; the attributive 'good' follows the noun and precedes the clause-final predicate, reflecting SOV order.",
+      "confidence": "low",
+      "caveats": "Izon has multiple dialects (Kolokuma, Mein, Gbanrain, etc.) with differing forms; this is an approximate Kolokuma-based reconstruction. SOV word order is well-established; the specific lexical choices need native verification."
+    }
+  ],
+
+  "pcm": [
+    {
+      "en": "I'm a good boy",
+      "translation": "I be good pikin",
+      "ipa": "/à - bè - ɡʊd - pɪ.kɪn/",
+      "tone_notes": "Nigerian Pidgin is not lexically tonal in the West-African register-tone sense, but it carries intonational stress patterns. 'pikin' takes primary stress on the first syllable.",
+      "grammar": "The copula 'be' is invariant across persons (I be / you be / e be). No subject-verb agreement and no article before 'pikin' in this generic sense. Word order is SVO.",
+      "morphology": "'pikin' (child) derives from Portuguese 'pequeno' (small) via the Atlantic creole continuum; 'good' is from English with no inflection.",
+      "confidence": "high",
+      "caveats": "Nigerian Pidgin is the most widely spoken language in Nigeria (~121M) yet has no NLLB-200 model — note that NLLB's 'tpi_Latn' is Tok Pisin (Papua New Guinea), a different creole. This is genuine, idiomatic Naija."
+    },
+    {
+      "en": "How are you",
+      "translation": "How you dey?",
+      "ipa": "/haʊ - jù - dɛ/",
+      "tone_notes": "Rising intonation on the final 'dey' marks the question; no lexical tone.",
+      "grammar": "'dey' is the imperfective/locative-existential marker ('to be, to be doing'). Question formed by intonation, not word order.",
+      "morphology": "'dey' grammaticalised from English 'there/be there'; highly productive aspect marker.",
+      "confidence": "high",
+      "caveats": "Everyday greeting; reply often 'I dey fine' or 'I dey kampe'."
+    },
+    {
+      "en": "Thank you",
+      "translation": "Tank you / Na you waka",
+      "ipa": "/taŋk.ju/",
+      "tone_notes": "No lexical tone; English-derived stress.",
+      "grammar": "Direct English-derived politeness formula; the alternative 'Na you waka' is more idiomatic appreciation.",
+      "morphology": "'tank' reflects the regular Pidgin th→t consonant shift.",
+      "confidence": "high",
+      "caveats": "Both forms current."
+    }
+  ],
+
+  "bkw": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Mè bé ùnyí ùwìyà",
+      "ipa": "/mɛ̀ - bé - ù.ɲí - ù.wì.jà/",
+      "tone_notes": "Bekwarra (Upper Cross) is a terraced-level tone language with H, M and L and downstep. The 1sg 'mè' is low; the qualifier carries a falling contour reconstructed here from related Upper Cross data.",
+      "grammar": "Subject pronoun + copula + noun + attributive, SVO. Upper Cross languages use noun-class concord that surfaces on modifiers.",
+      "morphology": "ùnyí = 'child' with the ù- noun-class prefix typical of Upper Cross; the modifier takes a concordial prefix agreeing with that class.",
+      "confidence": "low",
+      "caveats": "Bekwarra has a community orthography and a New Testament translation, but limited tonal documentation. This is a careful comparative reconstruction — exactly the kind of form the data-archeology partnerships (UNICAL, Bible societies) would confirm. Native-speaker verification strongly recommended."
+    }
+  ],
+
+  "bky": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Mə̀ kɛ̀ kɛ́bvù kɛ́bɛ̀",
+      "ipa": "/mə̀ - kɛ̀ - kɛ́.bvù - kɛ́.bɛ̀/",
+      "tone_notes": "Bokyi (Bendi) is tonal with H and L; the kɛ- noun-class prefix carries a high tone that spreads onto the modifier. Tone here is reconstructed from Bendi comparative data.",
+      "grammar": "SVO with Bantu-like noun-class concord (Bendi sits typologically between Cross River and Bantoid). The class prefix repeats on the adjective as agreement.",
+      "morphology": "kɛ́bvù = class-marked 'child'; kɛ́bɛ̀ = the concordially-prefixed adjective 'good'. The repeated kɛ́- prefix is the agreement that ties them together.",
+      "confidence": "low",
+      "caveats": "Bokyi shares adapters most easily with other Bendi languages (a key argument for the hub-and-spoke cluster design). Forms are reconstructed and need native verification."
+    }
+  ],
+
+  "eja": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Ǹ jɔ̀ mɔ́n ámbɔ́",
+      "ipa": "/ǹ - dʒɔ̀ - mɔ́n - ám.bɔ́/",
+      "tone_notes": "Ejagham (Ekoid Bantu) has H and L tones with grammatical tone on verbs. The syllabic nasal 1sg 'ǹ' is low; 'ámbɔ́' (good/fine) is reconstructed as all-high.",
+      "grammar": "Ekoid languages have full Bantu-style noun classes with prefix concord; SVO order. The copula is often a low-toned verbal element.",
+      "morphology": "mɔ́n = 'child' (cf. Bantu *-mọ̀na/ -mwana); the noun-class prefix and its concord govern the adjective form. Ejagham is historically associated with the Nsibidi ideographic writing system.",
+      "confidence": "low",
+      "caveats": "Endangered Ekoid language with sparse machine-readable corpora. This is a comparative-Bantu-informed reconstruction; a fluent speaker should verify both lexis and the class concord."
+    }
+  ],
+
+  "uba": [
+    {
+      "en": "I'm a good boy",
+      "translation": "(male register) Mə̀ ìbí ùnnə̀ ə̀sàŋ",
+      "ipa": "/mə̀ - ì.bí - ùn.nə̀ - ə̀.sàŋ/",
+      "tone_notes": "Ubang (Upper Cross) is tonal; documentation is extremely thin. Tone shown is indicative only.",
+      "grammar": "SVO with noun-class concord. Crucially, Ubang has substantially different MALE and FEMALE lexicons — the word for many everyday nouns differs by the speaker's gender. The form above is the male-register reconstruction.",
+      "morphology": "ùnnə̀ = 'child' (male register); a female speaker may use a different root entirely. This dual-lexicon system is globally rare and a documentation priority.",
+      "confidence": "low",
+      "caveats": "Ubang (~10k speakers, severely endangered) is famous for its gendered lexicons and is barely documented digitally. These forms are tentative placeholders illustrating the phenomenon; urgent native-speaker documentation is required."
+    }
+  ],
+
+  "ibb": [
+    {
+      "en": "I'm a good boy",
+      "translation": "Ami edi eti eyen-eren",
+      "ipa": "/à.mì - è.dì - é.tì - é.jèn.è.rèn/",
+      "tone_notes": "Ibibio (Lower Cross, close to Efik) is a register-tone language with H, L and downstep, plus contrastive vowel length. 'eti' (good) is H-L; the 1sg 'ami' is L-H.",
+      "grammar": "Pronominal copula construction parallel to Efik: pronoun + 'edi' (copula) + noun phrase, SVO. Ibibio and Efik are mutually intelligible to a large degree.",
+      "morphology": "eyen = 'child'; eren = 'male', so eyen-eren = 'boy'. The e- prefix is the Lower Cross noun-class fossil seen across the cluster — a good candidate for a shared LoRA adapter with Efik.",
+      "confidence": "medium",
+      "caveats": "Ibibio is relatively well-described; still, verify tone and the eyen-eren compound with a native speaker."
+    }
+  ],
+
+  "bin": [
+    {
+      "en": "I'm a good boy",
+      "translation": "I khin ọmọ esi",
+      "ipa": "/ì - xĩ - ɔ́.mɔ́ - é.sì/",
+      "tone_notes": "Edo (Bini, Edoid) has H and L tones with downstep. 'ọmọ' (child) is typically H-H; 'esi' (good) is reconstructed H-L.",
+      "grammar": "Edo uses the copula 'khin' for equative/identificational clauses, SVO. Edoid languages have rich verb serialisation.",
+      "morphology": "ọmọ = 'child' (cognate with Yoruboid ọmọ, reflecting deep Benue-Kwa relatedness); esi = quality root 'good/fine'.",
+      "confidence": "low",
+      "caveats": "Edo (language of the historic Benin Kingdom) has dictionaries and a literary tradition, but everyday tone-marked corpora are limited. Verify the copula and adjective with a native speaker."
+    }
+  ]
+}
