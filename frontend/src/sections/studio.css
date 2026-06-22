@@ -256,6 +256,30 @@
   color: var(--ochre-400);
 }
 
+.trans__nodata {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.02);
+  margin-bottom: 4px;
+}
+.trans__nodata-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.trans__nodata span:nth-child(2) {
+  font-size: 0.96rem;
+  color: var(--text-mid);
+}
+.trans__nodata-sub {
+  font-size: 0.78rem;
+  color: var(--text-lo);
+  font-family: var(--font-mono);
+}
+
 @media (max-width: 920px) {
   .studio__grid {
     grid-template-columns: 1fr;

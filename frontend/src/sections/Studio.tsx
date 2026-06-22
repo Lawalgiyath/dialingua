@@ -58,7 +58,7 @@ export default function Studio({
   const nllbLangs = langs.filter((l) => l.engine === "nllb");
   const researchLangs = langs.filter((l) => l.engine === "research");
 
-  const [target, setTarget] = useState("efi");
+  const [target, setTarget] = useState("yor");
   const [text, setText] = useState("I am a good boy");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<TranslationResult | null>(null);
@@ -231,7 +231,15 @@ export default function Studio({
                   {result.offline && <span className="chip mono">offline</span>}
                 </div>
 
-                <p className="trans__primary ling">{result.translation}</p>
+                {result.translation && result.translation !== "-" ? (
+                  <p className="trans__primary ling">{result.translation}</p>
+                ) : (
+                  <div className="trans__nodata">
+                    <span className="trans__nodata-icon">🔬</span>
+                    <span>No translation data available yet for this language in the live demo.</span>
+                    <span className="trans__nodata-sub">Linguistic notes below are from comparative documentation.</span>
+                  </div>
+                )}
                 {result.ipa && <p className="trans__ipa ling">{result.ipa}</p>}
 
                 {conf && (
