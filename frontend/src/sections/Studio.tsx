@@ -238,7 +238,7 @@ export default function Studio({
                 {result.translation && result.translation !== "-" ? (
                   <div className="trans__primary-wrap">
                     <p className="trans__primary ling">{result.translation}</p>
-                    {voice.supported && (
+                    {voice.supported && voice.getTier(result.code) !== "none" && (
                       <button
                         className={`trans__voice-btn ${voice.speaking ? "trans__voice-btn--active" : ""}`}
                         onClick={() => {
