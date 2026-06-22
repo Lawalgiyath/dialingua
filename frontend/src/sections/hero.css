@@ -1,0 +1,117 @@
+.hero {
+  padding-top: clamp(40px, 6vw, 72px);
+}
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+.hero__title {
+  font-size: clamp(2.3rem, 5vw, 3.9rem);
+  font-weight: 560;
+  margin: 18px 0 0;
+  max-width: 16ch;
+}
+.hero__accent {
+  background: linear-gradient(120deg, var(--ochre-400), var(--ochre-600));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero__lede {
+  margin: 22px 0 0;
+  font-size: 1.06rem;
+  color: var(--text-mid);
+  max-width: 52ch;
+}
+.hero__yoruba {
+  margin: 20px 0 0;
+  font-size: 1.15rem;
+  color: var(--clay-300);
+}
+.hero__gloss {
+  color: var(--text-lo);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 40px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid var(--border-hair);
+}
+.hero__stats dt {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--text-hi);
+  font-variant-numeric: tabular-nums;
+}
+.hero__stats dd {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-lo);
+  letter-spacing: 0.01em;
+}
+
+.hero__map {
+  position: relative;
+  padding: 16px;
+  border-radius: var(--r-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hero__map-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  color: var(--text-lo);
+  padding: 4px 6px;
+}
+.hero__coords {
+  color: var(--ochre-400);
+}
+.hero__map-stage {
+  display: grid;
+  place-items: center;
+  padding: 10px 0 6px;
+  min-height: 340px;
+}
+.hero__map-cap {
+  font-size: 0.78rem;
+  color: var(--text-lo);
+  margin: 0;
+  padding: 0 8px 6px;
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .hero__map {
+    order: -1;
+  }
+  .hero__map-stage :is(svg) {
+    width: 260px;
+    height: 260px;
+  }
+}
+@media (max-width: 520px) {
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 10px;
+  }
+}

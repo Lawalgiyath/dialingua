@@ -1,0 +1,16 @@
+#root {
+  position: relative;
+  isolation: isolate;
+}
+
+main {
+  display: block;
+}
+
+code.mono {
+  background: var(--surface-1);
+  padding: 2px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border-hair);
+  font-size: 0.85em;
+}

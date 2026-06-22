@@ -1,0 +1,312 @@
+{
+  "meta": {
+    "country": "Nigeria",
+    "living_languages": 520,
+    "extinct": 12,
+    "endangered_est": 165,
+    "families": ["Niger-Congo", "Nilo-Saharan", "Afro-Asiatic", "English creole"],
+    "note": "Representative sample of ~80 languages across all 37 states + FCT. Speaker figures are best-available estimates; the full framework targets all 520 living languages.",
+    "tiers": {
+      "1": { "label": "High-resource", "desc": "Strong digital footprint; full ASR/NMT/TTS via fine-tuning.", "strategy": "Fine-tune foundation models (NLLB, Whisper, MMS) on existing corpora." },
+      "2": { "label": "Regional lingua franca", "desc": "Moderate digital presence; Bible corpora, published grammars.", "strategy": "Data archeology + community partnerships + tonal-aware modeling (the Cross River pilot approach)." },
+      "3": { "label": "Developing / local", "desc": "Limited written corpora; needs active collection.", "strategy": "Church archives, university linguistics departments, LoRA adapters on related-language clusters." },
+      "4": { "label": "Endangered / near-extinct", "desc": "Written corpora barely exist; intergenerational transmission breaking.", "strategy": "Textless / visually-grounded speech (ZeST), elder recordings, urgent documentation." }
+    }
+  },
+  "states": [
+    {
+      "name": "Lagos", "zone": "South West", "lat": 6.52, "lng": 3.38, "density": 2,
+      "languages": [
+        { "code": "yor", "name": "Yoruba", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid (Defoid)", "speakers": 47000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": true, "note": "Dominant indigenous language of the South West; standardized orthography with three tones (high á, mid a, low à) and subdot vowels ẹ ọ ṣ." },
+        { "code": "awo", "name": "Awori (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 500000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Badagry", "Ojo"], "tonal": true, "note": "Yoruba dialect cluster of the Lagos lagoon, under pressure from Standard Yoruba and English." }
+      ]
+    },
+    {
+      "name": "Oyo", "zone": "South West", "lat": 8.0, "lng": 3.93, "density": 1,
+      "languages": [
+        { "code": "yor", "name": "Yoruba (Oyo)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 47000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Ibadan", "Oyo"], "tonal": true, "note": "The Oyo dialect underlies Standard Yoruba; Ibadan is the historical heart of adire indigo textile production." }
+      ]
+    },
+    {
+      "name": "Ogun", "zone": "South West", "lat": 6.99, "lng": 3.47, "density": 1,
+      "languages": [
+        { "code": "egb", "name": "Egba (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 2500000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Abeokuta"], "tonal": true, "note": "Major Yoruba dialect of Abeokuta." },
+        { "code": "ijb", "name": "Ijebu (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 3000000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Ijebu-Ode"], "tonal": true, "note": "Distinctive Yoruba dialect with archaic features." }
+      ]
+    },
+    {
+      "name": "Osun", "zone": "South West", "lat": 7.56, "lng": 4.52, "density": 1,
+      "languages": [
+        { "code": "yor", "name": "Yoruba (Ife)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 47000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Ile-Ife", "Osogbo"], "tonal": true, "note": "Ile-Ife is the mythic cradle of the Yoruba." }
+      ]
+    },
+    {
+      "name": "Ondo", "zone": "South West", "lat": 7.1, "lng": 4.84, "density": 2,
+      "languages": [
+        { "code": "yor", "name": "Yoruba (Ondo)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 47000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Akure"], "tonal": true },
+        { "code": "ilj", "name": "Ilaje (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 300000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Ilaje"], "tonal": true, "note": "Coastal Yoruba group of the Atlantic mangroves." },
+        { "code": "ukq", "name": "Ukaan", "iso639_3": "kcf", "family": "Niger-Congo", "subgroup": "Benue-Congo (isolate-ish)", "speakers": 18000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Akoko"], "tonal": true, "note": "A small, internally diverse Benue-Congo cluster of uncertain classification." }
+      ]
+    },
+    {
+      "name": "Ekiti", "zone": "South West", "lat": 7.72, "lng": 5.31, "density": 1,
+      "languages": [
+        { "code": "eki", "name": "Ekiti (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 2200000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Ado-Ekiti"], "tonal": true, "note": "North-East Yoruba (NEY) dialect cluster." }
+      ]
+    },
+    {
+      "name": "Anambra", "zone": "South East", "lat": 6.22, "lng": 6.94, "density": 1,
+      "languages": [
+        { "code": "ibo", "name": "Igbo", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 31000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": true, "note": "Heartland of Igbo; two tones plus downstep, vowel harmony, and the uli line-art tradition." }
+      ]
+    },
+    {
+      "name": "Enugu", "zone": "South East", "lat": 6.45, "lng": 7.5, "density": 1,
+      "languages": [
+        { "code": "ibo", "name": "Igbo (Nsukka)", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 31000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Nsukka", "Enugu"], "tonal": true, "note": "Nsukka dialects retain conservative features; home of UNN linguistics." }
+      ]
+    },
+    {
+      "name": "Imo", "zone": "South East", "lat": 5.49, "lng": 7.03, "density": 1,
+      "languages": [
+        { "code": "ibo", "name": "Igbo (Owerri)", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 31000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Owerri"], "tonal": true, "note": "Owerri Igbo is a basis for Central/Standard Igbo." },
+        { "code": "ola", "name": "Ola (Ohuhu)", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 200000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Mbaise"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Abia", "zone": "South East", "lat": 5.45, "lng": 7.52, "density": 1,
+      "languages": [
+        { "code": "ibo", "name": "Igbo (Ohuhu)", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 31000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Umuahia"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Ebonyi", "zone": "South East", "lat": 6.27, "lng": 8.08, "density": 2,
+      "languages": [
+        { "code": "izi", "name": "Izii (Igbo)", "iso639_3": "izi", "family": "Niger-Congo", "subgroup": "Igboid (Northern)", "speakers": 800000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Abakaliki"], "tonal": true, "note": "Cross-River-adjacent Igboid cluster (Izii–Ezaa–Ikwo–Mgbo)." },
+        { "code": "ibo", "name": "Igbo (Abakaliki)", "iso639_3": "ibo", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 31000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Abakaliki"], "tonal": true },
+        { "code": "kor", "name": "Korring (Oring)", "iso639_3": "koh", "family": "Niger-Congo", "subgroup": "Upper Cross", "speakers": 120000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Ohaozara"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Cross River", "zone": "South South", "lat": 5.87, "lng": 8.6, "density": 3,
+      "languages": [
+        { "code": "efi", "name": "Efik", "iso639_3": "efi", "family": "Niger-Congo", "subgroup": "Lower Cross", "speakers": 3860000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Calabar", "Odukpani"], "tonal": true, "note": "Lingua franca of the Cross River Basin; 9-vowel system, rich tonal morphology, long literary tradition via Bible translation." },
+        { "code": "bkw", "name": "Bekwarra", "iso639_3": "bkv", "family": "Niger-Congo", "subgroup": "Upper Cross", "speakers": 130000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Bekwarra", "Ogoja"], "tonal": true, "note": "Upper Cross language with a community orthography." },
+        { "code": "bky", "name": "Bokyi", "iso639_3": "bsy", "family": "Niger-Congo", "subgroup": "Bendi", "speakers": 170000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Boki", "Ikom"], "tonal": true, "note": "Bendi cluster; shares adapters most easily with related Bendi languages." },
+        { "code": "eja", "name": "Ejagham", "iso639_3": "etu", "family": "Niger-Congo", "subgroup": "Ekoid Bantu", "speakers": 120000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Etung", "Ikom"], "tonal": true, "note": "Ekoid; source of the Nsibidi ideographic script." },
+        { "code": "uba", "name": "Ubang", "iso639_3": "uba", "family": "Niger-Congo", "subgroup": "Upper Cross", "speakers": 10000, "tier": 4, "status": "Severely endangered", "engine": "research", "lgas": ["Obudu"], "tonal": true, "note": "Famous for distinct male and female lexicons — a global rarity needing urgent documentation." },
+        { "code": "kio", "name": "Kiong", "iso639_3": "kkm", "family": "Niger-Congo", "subgroup": "Lower Cross", "speakers": 800, "tier": 4, "status": "Nearly extinct", "engine": "research", "lgas": ["Akamkpa"], "tonal": true, "note": "Almost no fluent speakers remain; the textless visually-grounded-speech approach is the only viable path." }
+      ]
+    },
+    {
+      "name": "Akwa Ibom", "zone": "South South", "lat": 4.91, "lng": 7.85, "density": 2,
+      "languages": [
+        { "code": "ibb", "name": "Ibibio", "iso639_3": "ibb", "family": "Niger-Congo", "subgroup": "Lower Cross", "speakers": 6900000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Uyo"], "tonal": true, "note": "Largest Lower Cross language; close to Efik with a strong oral and broadcast presence." },
+        { "code": "ann", "name": "Annang", "iso639_3": "anw", "family": "Niger-Congo", "subgroup": "Lower Cross", "speakers": 1400000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Ikot Ekpene"], "tonal": true },
+        { "code": "orn", "name": "Oro (Oron)", "iso639_3": "orx", "family": "Niger-Congo", "subgroup": "Lower Cross", "speakers": 200000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Oron"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Rivers", "zone": "South South", "lat": 4.86, "lng": 6.93, "density": 3,
+      "languages": [
+        { "code": "ijc", "name": "Izon (Ijaw)", "iso639_3": "ijc", "family": "Niger-Congo", "subgroup": "Ijoid", "speakers": 5000000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Degema", "Ahoada"], "tonal": true, "note": "Ijoid is a divergent early branch of Niger-Congo; spoken across the Niger Delta." },
+        { "code": "kal", "name": "Kalabari (Ijaw)", "iso639_3": "ijn", "family": "Niger-Congo", "subgroup": "Ijoid", "speakers": 1000000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Asari-Toru"], "tonal": true },
+        { "code": "okr", "name": "Okrika (Ijaw)", "iso639_3": "okr", "family": "Niger-Congo", "subgroup": "Ijoid", "speakers": 250000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Okrika"], "tonal": true },
+        { "code": "ogb", "name": "Ogba", "iso639_3": "ogb", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 200000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Ogba/Egbema/Ndoni"], "tonal": true },
+        { "code": "khn", "name": "Khana (Ogoni)", "iso639_3": "ogo", "family": "Niger-Congo", "subgroup": "Ogoni (Cross River)", "speakers": 200000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Khana", "Gokana"], "tonal": true, "note": "Core Ogoni language of the Niger Delta." }
+      ]
+    },
+    {
+      "name": "Bayelsa", "zone": "South South", "lat": 4.77, "lng": 6.07, "density": 2,
+      "languages": [
+        { "code": "ijc", "name": "Izon (Central)", "iso639_3": "ijc", "family": "Niger-Congo", "subgroup": "Ijoid", "speakers": 5000000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Yenagoa"], "tonal": true, "note": "Bayelsa is the Ijaw heartland." },
+        { "code": "nem", "name": "Nembe (Ijaw)", "iso639_3": "ijc", "family": "Niger-Congo", "subgroup": "Ijoid", "speakers": 70000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Nembe"], "tonal": true },
+        { "code": "ogu", "name": "Ogbia", "iso639_3": "ogb", "family": "Niger-Congo", "subgroup": "Central Delta", "speakers": 200000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Ogbia"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Delta", "zone": "South South", "lat": 5.71, "lng": 5.89, "density": 3,
+      "languages": [
+        { "code": "urh", "name": "Urhobo", "iso639_3": "urh", "family": "Niger-Congo", "subgroup": "Edoid (Southwestern)", "speakers": 2000000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Ughelli", "Sapele"], "tonal": true, "note": "Largest Edoid language of Delta State." },
+        { "code": "iso", "name": "Isoko", "iso639_3": "iso", "family": "Niger-Congo", "subgroup": "Edoid", "speakers": 600000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Oleh", "Ozoro"], "tonal": true },
+        { "code": "uki", "name": "Ukwuani", "iso639_3": "ukw", "family": "Niger-Congo", "subgroup": "Igboid", "speakers": 150000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Ukwuani"], "tonal": true },
+        { "code": "ito", "name": "Itsekiri", "iso639_3": "its", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 1000000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Warri"], "tonal": true, "note": "A Yoruboid language spoken far from the Yoruba homeland, around Warri." }
+      ]
+    },
+    {
+      "name": "Edo", "zone": "South South", "lat": 6.5, "lng": 5.95, "density": 2,
+      "languages": [
+        { "code": "bin", "name": "Edo (Bini)", "iso639_3": "bin", "family": "Niger-Congo", "subgroup": "Edoid", "speakers": 1500000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Benin City"], "tonal": true, "note": "Language of the historic Benin Kingdom; rich royal and bronze-casting heritage." },
+        { "code": "esa", "name": "Esan", "iso639_3": "ish", "family": "Niger-Congo", "subgroup": "Edoid", "speakers": 600000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Ekpoma"], "tonal": true },
+        { "code": "owa", "name": "Owan (Emai-Iuleha)", "iso639_3": "ema", "family": "Niger-Congo", "subgroup": "Edoid (North-Central)", "speakers": 100000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Owan"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Kano", "zone": "North West", "lat": 12.0, "lng": 8.52, "density": 1,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": true, "note": "The major lingua franca of northern Nigeria and the Sahel; ~94M total speakers. Chadic (Afro-Asiatic), tonal, with Latin (boko) and Arabic (ajami) scripts." }
+      ]
+    },
+    {
+      "name": "Katsina", "zone": "North West", "lat": 12.5, "lng": 7.6, "density": 1,
+      "languages": [
+        { "code": "hau", "name": "Hausa (Katsinawa)", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Katsina"], "tonal": true, "note": "Katsina is one of the prestige dialect centres of Hausa." }
+      ]
+    },
+    {
+      "name": "Kaduna", "zone": "North West", "lat": 10.52, "lng": 7.44, "density": 3,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": true },
+        { "code": "gbg", "name": "Gbagyi (Gwari)", "iso639_3": "gbr", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1000000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Chikun", "Kajuru"], "tonal": true },
+        { "code": "aty", "name": "Atyap (Kataf)", "iso639_3": "kcg", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 130000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Zangon Kataf"], "tonal": true },
+        { "code": "jju", "name": "Jju (Kaje)", "iso639_3": "kaj", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 300000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Zangon Kataf", "Kachia"], "tonal": true },
+        { "code": "ham", "name": "Hyam (Jaba)", "iso639_3": "jab", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 100000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Jaba"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Jigawa", "zone": "North West", "lat": 12.23, "lng": 9.56, "density": 1,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Dutse"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Kebbi", "zone": "North West", "lat": 11.5, "lng": 4.2, "density": 2,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Birnin Kebbi"], "tonal": true },
+        { "code": "fuv", "name": "Fulfulde (Sokoto)", "iso639_3": "fuv", "family": "Niger-Congo", "subgroup": "Atlantic (Fula)", "speakers": 15000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide (pastoral)"], "tonal": false, "note": "Nigerian Fulfulde; an Atlantic language with noun-class concord, spoken by Fulani pastoralists across the north." },
+        { "code": "dnd", "name": "Dendi", "iso639_3": "ddn", "family": "Nilo-Saharan", "subgroup": "Songhay", "speakers": 30000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Bagudo"], "tonal": false, "note": "A Songhay (Nilo-Saharan) outlier along the Niger River." }
+      ]
+    },
+    {
+      "name": "Sokoto", "zone": "North West", "lat": 13.06, "lng": 5.24, "density": 1,
+      "languages": [
+        { "code": "hau", "name": "Hausa (Sakkwatanci)", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Sokoto"], "tonal": true },
+        { "code": "fuv", "name": "Fulfulde", "iso639_3": "fuv", "family": "Niger-Congo", "subgroup": "Atlantic (Fula)", "speakers": 15000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": false }
+      ]
+    },
+    {
+      "name": "Zamfara", "zone": "North West", "lat": 12.17, "lng": 6.66, "density": 1,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Gusau"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Borno", "zone": "North East", "lat": 11.85, "lng": 13.16, "density": 2,
+      "languages": [
+        { "code": "knc", "name": "Kanuri (Central)", "iso639_3": "knc", "family": "Nilo-Saharan", "subgroup": "Saharan", "speakers": 8500000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Maiduguri"], "tonal": false, "note": "The principal Nilo-Saharan language of Nigeria and language of the historic Kanem-Bornu Empire." },
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Statewide"], "tonal": true },
+        { "code": "mrt", "name": "Marghi", "iso639_3": "mrt", "family": "Afro-Asiatic", "subgroup": "Central Chadic", "speakers": 200000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Damboa"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Yobe", "zone": "North East", "lat": 12.0, "lng": 11.5, "density": 2,
+      "languages": [
+        { "code": "knc", "name": "Kanuri (Manga)", "iso639_3": "knc", "family": "Nilo-Saharan", "subgroup": "Saharan", "speakers": 8500000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Damaturu"], "tonal": false },
+        { "code": "bde", "name": "Bade", "iso639_3": "bde", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 250000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Bade"], "tonal": true },
+        { "code": "ngz", "name": "Ngizim", "iso639_3": "ngi", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 80000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Machina"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Adamawa", "zone": "North East", "lat": 9.33, "lng": 12.4, "density": 3,
+      "languages": [
+        { "code": "fuv", "name": "Fulfulde (Adamawa)", "iso639_3": "fuv", "family": "Niger-Congo", "subgroup": "Atlantic (Fula)", "speakers": 15000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Yola"], "tonal": false, "note": "Adamawa is a major centre of Fulfulde; the state is one of the most linguistically diverse in Africa." },
+        { "code": "bcq", "name": "Bana (Bachama)", "iso639_3": "bcy", "family": "Afro-Asiatic", "subgroup": "Central Chadic", "speakers": 150000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Numan"], "tonal": true },
+        { "code": "mfi", "name": "Wandala (Mandara)", "iso639_3": "mfi", "family": "Afro-Asiatic", "subgroup": "Central Chadic", "speakers": 100000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Madagali"], "tonal": true },
+        { "code": "hig", "name": "Kamwe (Higi)", "iso639_3": "hig", "family": "Afro-Asiatic", "subgroup": "Central Chadic", "speakers": 400000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Michika"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Taraba", "zone": "North East", "lat": 8.0, "lng": 10.5, "density": 3,
+      "languages": [
+        { "code": "fuv", "name": "Fulfulde", "iso639_3": "fuv", "family": "Niger-Congo", "subgroup": "Atlantic (Fula)", "speakers": 15000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Jalingo"], "tonal": false },
+        { "code": "mzm", "name": "Mumuye", "iso639_3": "mzm", "family": "Niger-Congo", "subgroup": "Adamawa", "speakers": 600000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Zing", "Jalingo"], "tonal": true },
+        { "code": "kcl", "name": "Kuteb", "iso639_3": "kcl", "family": "Niger-Congo", "subgroup": "Benue-Congo (Jukunoid)", "speakers": 100000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Takum"], "tonal": true },
+        { "code": "jbu", "name": "Jukun (Wukari)", "iso639_3": "jbu", "family": "Niger-Congo", "subgroup": "Jukunoid", "speakers": 100000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Wukari"], "tonal": true, "note": "Language of the historic Kwararafa confederacy." }
+      ]
+    },
+    {
+      "name": "Gombe", "zone": "North East", "lat": 10.29, "lng": 11.17, "density": 2,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Gombe"], "tonal": true },
+        { "code": "tnq", "name": "Tangale", "iso639_3": "tan", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 130000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Billiri", "Kaltungo"], "tonal": true },
+        { "code": "wja", "name": "Waja", "iso639_3": "wja", "family": "Niger-Congo", "subgroup": "Adamawa", "speakers": 80000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Balanga"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Bauchi", "zone": "North East", "lat": 10.31, "lng": 9.85, "density": 3,
+      "languages": [
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Bauchi"], "tonal": true, "note": "Bauchi is reputedly the most linguistically diverse state in Nigeria by raw language count." },
+        { "code": "say", "name": "Zaar (Sayanci)", "iso639_3": "say", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 150000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Tafawa Balewa"], "tonal": true },
+        { "code": "jim", "name": "Jimi", "iso639_3": "jim", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 3000, "tier": 4, "status": "Nearly extinct", "engine": "research", "lgas": ["Ganjuwa"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Plateau", "zone": "North Central", "lat": 9.22, "lng": 9.52, "density": 4,
+      "languages": [
+        { "code": "ber", "name": "Berom", "iso639_3": "bom", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 1000000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Jos South", "Barkin Ladi"], "tonal": true, "note": "Largest indigenous language of the Jos Plateau, one of the densest language regions on earth." },
+        { "code": "ngas", "name": "Ngas (Angas)", "iso639_3": "anc", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 400000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Pankshin"], "tonal": true },
+        { "code": "mwg", "name": "Mwaghavul", "iso639_3": "sur", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 300000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Mangu"], "tonal": true },
+        { "code": "tar", "name": "Tarok", "iso639_3": "yer", "family": "Niger-Congo", "subgroup": "Plateau (Tarokoid)", "speakers": 300000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Langtang"], "tonal": true },
+        { "code": "iri", "name": "Irigwe", "iso639_3": "iri", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 40000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Bassa"], "tonal": true },
+        { "code": "fya", "name": "Fyam (Pyem)", "iso639_3": "pym", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 30000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Mangu"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Nasarawa", "zone": "North Central", "lat": 8.49, "lng": 8.2, "density": 4,
+      "languages": [
+        { "code": "ekn", "name": "Eggon", "iso639_3": "ego", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 250000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Akwanga", "Nasarawa Eggon"], "tonal": true },
+        { "code": "alg", "name": "Alago", "iso639_3": "ala", "family": "Niger-Congo", "subgroup": "Idomoid", "speakers": 50000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Lafia", "Obi"], "tonal": true },
+        { "code": "mada", "name": "Mada", "iso639_3": "mda", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 100000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Akwanga"], "tonal": true },
+        { "code": "gwd", "name": "Gwandara", "iso639_3": "gwn", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 30000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Karu"], "tonal": true, "note": "Closest relative of Hausa." }
+      ]
+    },
+    {
+      "name": "Benue", "zone": "North Central", "lat": 7.34, "lng": 8.77, "density": 3,
+      "languages": [
+        { "code": "tiv", "name": "Tiv", "iso639_3": "tiv", "family": "Niger-Congo", "subgroup": "Tivoid (Benue-Congo)", "speakers": 5000000, "tier": 2, "status": "Vigorous", "engine": "research", "lgas": ["Makurdi", "Gboko"], "tonal": true, "note": "Major Benue-Congo language; two tones, verbal extensions, and a strong oral literature." },
+        { "code": "idu", "name": "Idoma", "iso639_3": "idu", "family": "Niger-Congo", "subgroup": "Idomoid", "speakers": 1200000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Otukpo"], "tonal": true },
+        { "code": "igd", "name": "Igede", "iso639_3": "ige", "family": "Niger-Congo", "subgroup": "Idomoid", "speakers": 250000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Oju"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Kogi", "zone": "North Central", "lat": 7.73, "lng": 6.69, "density": 3,
+      "languages": [
+        { "code": "ibo", "name": "Igala", "iso639_3": "igl", "family": "Niger-Congo", "subgroup": "Yoruboid (Akokoid)", "speakers": 2000000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Idah"], "tonal": true, "note": "A Yoruboid language; despite the shared code field here it routes to research mode." },
+        { "code": "ebi", "name": "Ebira", "iso639_3": "igb", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1000000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Okene"], "tonal": true },
+        { "code": "oko", "name": "Okun (Yoruba)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 500000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Kabba"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Kwara", "zone": "North Central", "lat": 8.5, "lng": 4.55, "density": 2,
+      "languages": [
+        { "code": "yor", "name": "Yoruba (Ilorin)", "iso639_3": "yor", "family": "Niger-Congo", "subgroup": "Yoruboid", "speakers": 47000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Ilorin"], "tonal": true },
+        { "code": "nup", "name": "Nupe", "iso639_3": "nup", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1200000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Patigi"], "tonal": true },
+        { "code": "bru", "name": "Baatonum (Bariba)", "iso639_3": "bba", "family": "Niger-Congo", "subgroup": "Gur (Savanna)", "speakers": 600000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Baruten"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Niger", "zone": "North Central", "lat": 9.93, "lng": 5.6, "density": 3,
+      "languages": [
+        { "code": "nup", "name": "Nupe", "iso639_3": "nup", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1200000, "tier": 3, "status": "Vigorous", "engine": "research", "lgas": ["Bida"], "tonal": true, "note": "Language of the historic Nupe Kingdom; centre at Bida." },
+        { "code": "gbg", "name": "Gbagyi (Gwari)", "iso639_3": "gbr", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1000000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Suleja"], "tonal": true },
+        { "code": "kam", "name": "Kambari", "iso639_3": "kdl", "family": "Niger-Congo", "subgroup": "Kainji", "speakers": 300000, "tier": 4, "status": "Threatened", "engine": "research", "lgas": ["Magama"], "tonal": true },
+        { "code": "rin", "name": "Reshe", "iso639_3": "res", "family": "Niger-Congo", "subgroup": "Kainji", "speakers": 60000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Borgu"], "tonal": true }
+      ]
+    },
+    {
+      "name": "FCT (Abuja)", "zone": "North Central", "lat": 8.9, "lng": 7.18, "density": 3,
+      "languages": [
+        { "code": "gbg", "name": "Gbagyi (Gwari)", "iso639_3": "gbr", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 1000000, "tier": 3, "status": "Threatened", "engine": "research", "lgas": ["Gwagwalada", "Kuje"], "tonal": true, "note": "The original inhabitants of the Federal Capital Territory." },
+        { "code": "hau", "name": "Hausa", "iso639_3": "hau", "family": "Afro-Asiatic", "subgroup": "West Chadic", "speakers": 54000000, "tier": 1, "status": "Vigorous", "engine": "nllb", "lgas": ["Citywide"], "tonal": true },
+        { "code": "gde", "name": "Gade", "iso639_3": "ged", "family": "Niger-Congo", "subgroup": "Nupoid", "speakers": 60000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Abaji"], "tonal": true },
+        { "code": "kor2", "name": "Koro (Ija)", "iso639_3": "kqv", "family": "Niger-Congo", "subgroup": "Plateau", "speakers": 50000, "tier": 4, "status": "Endangered", "engine": "research", "lgas": ["Bwari"], "tonal": true }
+      ]
+    },
+    {
+      "name": "Nigeria (nationwide)", "zone": "Cross-cutting", "lat": 9.08, "lng": 8.68, "density": 0, "virtual": true,
+      "languages": [
+        { "code": "pcm", "name": "Nigerian Pidgin", "iso639_3": "pcm", "family": "English creole", "subgroup": "Atlantic creole", "speakers": 121000000, "tier": 1, "status": "Vigorous", "engine": "research", "lgas": ["Nationwide"], "tonal": false, "note": "An English-lexified creole and the most widely spoken language in Nigeria by total speakers. Not covered by NLLB-200 (its tpi_Latn code is the unrelated Tok Pisin of Papua New Guinea), so it routes to research mode." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+/* ============================================================================
+   Dialingua - Design tokens (Light Theme Redesign)
+   Modern, airy, and high-contrast typographic focus.
+   ========================================================================== */
+
+:root {
+  /* - Backgrounds: Airy and crisp - */
+  --bg-base: #faf9f7;
+  --bg-sunken: #f0efea;
+  --bg-raised: #ffffff;
+
+  /* - Solid surfaces - */
+  --surface-1: #ffffff;
+  --surface-2: #f4f3f0;
+  --surface-3: #eae9e5;
+  --border-hair: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.2);
+
+  /* - Text: High contrast for typography - */
+  --text-hi: #111110;
+  --text-mid: #4a4a48;
+  --text-lo: #8a8a88;
+  --text-disabled: #b0b0ad;
+
+  /* - Accent: Minimalist contrast (Deep ink and terracotta) - */
+  --indigo-700: #1a1e29;
+  --indigo-600: #2c3445;
+  --indigo-500: #424f66;
+  --indigo-400: #5c6c8c;
+  --indigo-300: #7b8ea8;
+
+  --ochre-600: #8c471c;
+  --ochre-500: #b55f26;
+  --ochre-400: #d6793a;
+  --terracotta-500: #a34125;
+  --clay-300: #e3bcab;
+
+  /* - Semantic - */
+  --success: #367d5e;
+  --warning: #bd6a22;
+  --danger: #b33939;
+  --info: #3b5c91;
+
+  /* - Tier colors (resource triage) - */
+  --tier-1: #2f6a50; /* high-resource */
+  --tier-2: #3f5d8a; /* regional lingua franca */
+  --tier-3: #9c602a; /* developing */
+  --tier-4: #9c3c3c; /* endangered */
+
+  /* - Glass (Subtle, clean light glass) - */
+  --glass-bg-top: rgba(255, 255, 255, 0.6);
+  --glass-bg-bot: rgba(255, 255, 255, 0.3);
+  --glass-rim: rgba(0, 0, 0, 0.04);
+  --glass-hi: rgba(255, 255, 255, 0.9);
+
+  /* - Type - */
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-ui: "Inter Variable", system-ui, -apple-system, sans-serif;
+  --font-ling: "Charis SIL", "Inter Variable", serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  /* - Spacing / radius / motion - Sharp, modern edges - */
+  --r-sm: 0px;
+  --r-md: 2px;
+  --r-lg: 4px;
+  --r-xl: 6px;
+  
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 200ms;
+
+  --maxw: 1240px; /* slightly wider for modern feel */
+
+  color-scheme: light;
+}
