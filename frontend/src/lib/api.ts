@@ -2,28 +2,34 @@
  * Dialingua API client.
  *
  * Two modes:
- *   LOCAL  (DEV / run.ps1): proxies to FastAPI on 127.0.0.1:8000 for full support.
- *   LIVE   (GitHub Pages):  atlas is bundled statically; translations go directly
- *                           to the free HuggingFace Inference API - no backend needed.
+ *   LOCAL  (DEV / run.ps1): proxies to FastAPI on 127.0.0.1:8000 for full NLLB support.
+ *   LIVE   (GitHub Pages):  atlas is bundled statically; translations go to the
+ *                           MyMemory API (free, browser-safe, no auth needed).
  */
 import type { Atlas, Health, TranslationResult } from "./types";
+import atlasStatic from "./atlas.json";
 
 // --- mode detection ----------------------------------------------------------
 
 const IS_DEV = import.meta.env.DEV;
 const LOCAL_BASE = "http://127.0.0.1:8000";
 
-// HuggingFace free Inference API endpoint for NLLB-200-distilled-600M
-const HF_MODEL =
-  "https://api-inference.huggingface.co/models/facebook/nllb-200-distilled-600M";
+// MyMemory free translation API - no auth, CORS-enabled, browser-safe
+// https://mymemory.translated.net/doc/spec.php
+const MYMEMORY = "https://api.mymemory.translated.net/get";
 
-// FLORES-200 codes for the Nigerian languages NLLB actually supports
-const FLORES: Record<string, string> = {
-  yor: "yor_Latn", // Yoruba
-  ibo: "ibo_Latn", // Igbo
-  hau: "hau_Latn", // Hausa
-  knc: "knc_Latn", // Central Kanuri
-  fuv: "fuv_Latn", // Nigerian Fulfulde
+// Language codes for MyMemory (ISO 639-1 compatible)
+const LANG_CODES: Record<string, { code: string; name: string; family: string; tier: number }> = {
+  yor: { code: "yo",  name: "Yoruba",           family: "Niger-Congo",   tier: 1 },
+  ibo: { code: "ig",  name: "Igbo",              family: "Niger-Congo",   tier: 1 },
+  hau: { code: "ha",  name: "Hausa",             family: "Afro-Asiatic",  tier: 1 },
+  fuv: { code: "ff",  name: "Fulfulde",          family: "Niger-Congo",   tier: 2 },
+  knc: { code: "kr",  name: "Kanuri",            family: "Nilo-Saharan",  tier: 2 },
+  pcm: { code: "pcm", name: "Nigerian Pidgin",   family: "Creole",        tier: 2 },
+  tiv: { code: "tiv", name: "Tiv",               family: "Niger-Congo",   tier: 3 },
+  ijo: { code: "ijo", name: "Ijo",               family: "Niger-Congo",   tier: 3 },
+  efi: { code: "efi", name: "Efik",              family: "Niger-Congo",   tier: 3 },
+  bin: { code: "bin", name: "Edo (Bini)",        family: "Niger-Congo",   tier: 3 },
 };
 
 // --- local helpers -----------------------------------------------------------
@@ -34,10 +40,7 @@ async function localGet<T>(path: string): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-async function localTranslate(
-  text: string,
-  target: string,
-): Promise<TranslationResult> {
+async function localTranslate(text: string, target: string): Promise<TranslationResult> {
   const res = await fetch(`${LOCAL_BASE}/api/translate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -50,56 +53,26 @@ async function localTranslate(
   return res.json() as Promise<TranslationResult>;
 }
 
-// --- HuggingFace Inference API (live / static deployment) -------------------
+// --- MyMemory API (live / static deployment) ---------------------------------
 
-/** Call HF API with automatic retry when the model is cold-starting. */
-async function hfTranslate(
-  text: string,
-  floresTarget: string,
-): Promise<string> {
-  const MAX_RETRIES = 6;
-  const RETRY_DELAY = 8000; // 8 s between retries while model warms up
-
-  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-    const res = await fetch(HF_MODEL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        inputs: text,
-        parameters: { src_lang: "eng_Latn", tgt_lang: floresTarget },
-      }),
-    });
-
-    const body = (await res.json()) as
-      | Array<{ translation_text: string }>
-      | { error?: string; estimated_time?: number };
-
-    // Model still loading - wait and retry
-    if (!Array.isArray(body) && body.error && body.estimated_time) {
-      if (attempt < MAX_RETRIES - 1) {
-        await new Promise((r) => setTimeout(r, RETRY_DELAY));
-        continue;
-      }
-      throw new Error(
-        "The AI model is still loading on HuggingFace (cold start). Please try again in ~30 seconds.",
-      );
-    }
-
-    if (!Array.isArray(body)) {
-      throw new Error(
-        (body as { error?: string }).error || "Unexpected response from HuggingFace API.",
-      );
-    }
-
-    return body[0].translation_text;
+async function myMemoryTranslate(text: string, targetCode: string): Promise<string> {
+  const url = `${MYMEMORY}?q=${encodeURIComponent(text)}&langpair=en|${targetCode}&de=dialingua@demo.com`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`MyMemory API error ${res.status}`);
+  const data = await res.json() as {
+    responseStatus: number;
+    responseData: { translatedText: string };
+    matches?: Array<{ translation: string; quality: string }>;
+  };
+  if (data.responseStatus !== 200) {
+    throw new Error(`Translation failed (status ${data.responseStatus})`);
   }
-
-  throw new Error("Translation timed out. Please try again.");
+  const translation = data.responseData.translatedText;
+  if (!translation || translation.toLowerCase() === text.toLowerCase()) {
+    throw new Error("Translation not available for this language on the live demo. Run locally for full support.");
+  }
+  return translation;
 }
-
-// --- static atlas (bundled at build time for GitHub Pages) -------------------
-
-import atlasStatic from "./atlas.json";
 
 // --- public API --------------------------------------------------------------
 
@@ -110,53 +83,40 @@ export function fetchAtlas(): Promise<Atlas> {
 
 export function fetchHealth(): Promise<Health> {
   if (IS_DEV) return localGet<Health>("/api/health");
-  // On the live static site we have no backend - return a minimal stub.
   return Promise.resolve({
     ok: true,
-    nllb: {
-      state: "ready",
-      model: "facebook/nllb-200-distilled-600M",
-      languages: Object.keys(FLORES),
-    },
+    nllb: { state: "ready", model: "MyMemory (live)", languages: Object.keys(LANG_CODES) },
     research: { mode: "curated", claude_available: false },
     languages: 0,
     states: 0,
   } as unknown as Health);
 }
 
-export async function translate(
-  text: string,
-  target: string,
-): Promise<TranslationResult> {
-  // In dev mode, proxy everything to the full FastAPI backend.
+export async function translate(text: string, target: string): Promise<TranslationResult> {
+  // In dev mode proxy everything to the full FastAPI + NLLB backend.
   if (IS_DEV) return localTranslate(text, target);
 
-  // Live mode: NLLB languages go to HuggingFace; others use research corpus stub.
-  const floresCode = FLORES[target];
-
-  if (floresCode) {
-    const translation = await hfTranslate(text, floresCode);
-    return {
-      language: target,
-      code: target,
-      tier: 1,
-      family: "",
-      translation,
-      engine: "nllb",
-      engine_label: "NLLB-200 via HuggingFace Inference API",
-      model: "facebook/nllb-200-distilled-600M",
-      flores_code: floresCode,
-      latency_ms: 0,
-      confidence: "model",
-      offline: false,
-    };
+  // Live mode: use MyMemory free API (browser-safe, no auth, no CORS issues).
+  const lang = LANG_CODES[target];
+  if (!lang) {
+    throw new Error(
+      "This language is not supported in the live demo. Run locally for full support.",
+    );
   }
 
-  // Research-only languages (Efik, Tiv, Ijaw, Pidgin, etc.): full translation
-  // requires the local backend. Surface a clear message on the live site.
-  throw new Error(
-    "This language uses the research engine which runs locally only. " +
-      "Tier-1 languages (Yoruba, Igbo, Hausa, Kanuri, Fulfulde) are fully " +
-      "supported on the live site.",
-  );
+  const translation = await myMemoryTranslate(text, lang.code);
+
+  return {
+    language: lang.name,
+    code: target,
+    tier: lang.tier as 1 | 2 | 3 | 4,
+    family: lang.family,
+    translation,
+    engine: "nllb",
+    engine_label: "Neural Translation (MyMemory)",
+    model: null,
+    latency_ms: 0,
+    confidence: "medium",
+    offline: false,
+  };
 }
