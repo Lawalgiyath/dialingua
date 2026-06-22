@@ -135,10 +135,10 @@ export default function AtlasSection({ atlas }: { atlas: AtlasT | null }) {
                     key={p.name}
                     d={p.d}
                     fill={st ? densityFill(p.name) : "var(--surface-1)"}
-                    stroke={isActive ? "var(--ochre-400)" : "var(--bg-sunken)"}
-                    strokeWidth={isActive ? 2 : 0.8}
-                    className="atlas__state"
-                    style={{ opacity: isActive ? 1 : hover ? 0.78 : 0.92 }}
+                    stroke="var(--bg-sunken)"
+                    strokeWidth={0.6}
+                    className={`atlas__state${isActive ? " atlas__state--active" : ""}`}
+                    style={{ opacity: isActive ? 1 : hover && !isActive ? 0.72 : 0.92 }}
                     onMouseEnter={() => setHover(name)}
                     onMouseLeave={() => setHover(null)}
                     onClick={() => setSelected(name)}

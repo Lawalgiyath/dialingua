@@ -35,16 +35,21 @@
   cursor: pointer;
   transition:
     opacity var(--dur) var(--ease),
-    fill var(--dur) var(--ease),
-    stroke-width var(--dur) var(--ease);
+    fill var(--dur) var(--ease);
 }
 .atlas__state:hover {
-  filter: brightness(1.18);
+  filter: brightness(1.22);
 }
 .atlas__state:focus-visible {
   outline: none;
-  stroke: var(--indigo-300);
-  stroke-width: 2;
+}
+.atlas__state--active {
+  filter: drop-shadow(0 0 6px var(--ochre-400)) drop-shadow(0 0 14px var(--ochre-500)) brightness(1.18);
+  animation: stateglow 2.2s ease-in-out infinite alternate;
+}
+@keyframes stateglow {
+  from { filter: drop-shadow(0 0 4px var(--ochre-400)) drop-shadow(0 0 10px var(--ochre-500)) brightness(1.15); }
+  to   { filter: drop-shadow(0 0 10px var(--ochre-300)) drop-shadow(0 0 24px var(--ochre-400)) brightness(1.28); }
 }
 .atlas__count {
   font-size: 11px;
