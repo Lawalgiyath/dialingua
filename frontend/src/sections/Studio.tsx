@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { translate } from "../lib/api";
 import type { Atlas, Health, Language, TranslationResult } from "../lib/types";
+import { useVoice } from "../lib/useVoice";
 import "./studio.css";
 
 const CONFIDENCE: Record<string, { label: string; pct: number; color: string }> = {
@@ -63,6 +64,9 @@ export default function Studio({
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<TranslationResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // --- Voice hook ---
+  const voice = useVoice();
 
   const targetLang = langs.find((l) => l.code === target);
   const isModel = targetLang?.engine === "nllb";
@@ -232,7 +236,21 @@ export default function Studio({
                 </div>
 
                 {result.translation && result.translation !== "-" ? (
-                  <p className="trans__primary ling">{result.translation}</p>
+                  <div className="trans__primary-wrap">
+                    <p className="trans__primary ling">{result.translation}</p>
+                    {voice.supported && (
+                      <button
+                        className={`trans__voice-btn ${voice.speaking ? "trans__voice-btn--active" : ""}`}
+                        onClick={() => {
+                          if (voice.speaking) voice.stop();
+                          else voice.speak(result.translation, result.code);
+                        }}
+                        title={`Pronounce in ${result.language}`}
+                      >
+                        {voice.speaking ? "■" : "▶"}
+                      </button>
+                    )}
+                  </div>
                 ) : (
                   <div className="trans__nodata">
                     <span className="trans__nodata-icon">🔬</span>
