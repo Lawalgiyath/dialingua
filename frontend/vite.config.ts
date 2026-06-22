@@ -1,11 +1,13 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// Single-port deployment: FastAPI serves the built dist, so base must be relative.
-// Dev: Vite on 5173 proxies /api to the FastAPI backend on 8000.
+// VITE_BASE is set to /dialingua/ by the GitHub Actions deploy workflow.
+// Locally and when served by FastAPI it falls back to "./" (relative).
+const base = process.env.VITE_BASE ?? "./";
+
 export default defineConfig({
   plugins: [react()],
-  base: "./",
+  base,
   server: {
     port: 5173,
     proxy: {
