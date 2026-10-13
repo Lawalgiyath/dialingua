@@ -36,16 +36,16 @@ export default function Tiers({ atlas }: { atlas: Atlas | null }) {
     <section className="section tiers" id="tiers">
       <div className="wrap">
         <header className="sec-head">
-          <span className="eyebrow">Resource triage · not uniform treatment</span>
+          <span className="eyebrow">Our Approach</span>
           <h2>
-            You cannot build Whisper-grade ASR for 520 languages. So you{" "}
-            <span className="u-ochre">triage</span>.
+            Every language gets the{" "}
+            <span className="u-ochre">support it needs</span>.
           </h2>
           <p className="sec-sub">
-            Data density is wildly uneven, so treatment is too. Each tier gets a
-            different strategy - from fine-tuning foundation models on the
-            high-resource giants down to textless, visually-grounded speech for
-            languages whose written corpora barely exist.
+            Languages have different levels of digital resources available. We've 
+            organized them into tiers so each one gets the most effective approach - 
+            from advanced AI for well-documented languages to careful research and 
+            community partnership for endangered ones.
           </p>
         </header>
 

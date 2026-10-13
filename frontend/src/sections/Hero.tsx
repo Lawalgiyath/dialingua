@@ -37,18 +37,16 @@ export default function Hero({ atlas }: { atlas: Atlas | null }) {
     <section className="hero section" id="top">
       <div className="wrap hero__grid">
         <div className="hero__copy">
-          <span className="eyebrow">National Language-AI Framework · Nigeria</span>
+          <span className="eyebrow">National Language AI Platform · Nigeria</span>
           <h1 className="hero__title">
-            Infrastructure for{" "}
-            <span className="hero__accent">520 living languages</span>, not five
-            models.
+            Bringing AI to{" "}
+            <span className="hero__accent">every Nigerian language</span>, not just the big five.
           </h1>
           <p className="hero__lede">
-            Dialingua is a scaling framework for speech and translation AI across
-            every Nigerian language - from high-resource Yoruba, Igbo and Hausa
-            down to the severely endangered tongues of the Cross River basin. A
-            shared foundation, language-specific adapters, and honest
-            resource-tier triage.
+            Dialingua makes speech and translation technology work for all Nigerian 
+            languages - from widely spoken Yoruba, Igbo and Hausa to the endangered 
+            languages of Cross River State. We're building AI that preserves cultural 
+            heritage while connecting communities.
           </p>
           <p className="hero__yoruba ling" lang="yo">
             “Èdè kì í kú” - <span className="hero__gloss">a language does not die.</span>

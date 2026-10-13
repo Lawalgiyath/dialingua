@@ -14,25 +14,24 @@ export default function Architecture() {
     <section className="section arch" id="architecture">
       <div className="wrap">
         <header className="sec-head">
-          <span className="eyebrow">System architecture · hub & spoke</span>
+          <span className="eyebrow">How It Works</span>
           <h2>
-            One backbone. Hundreds of lightweight{" "}
-            <span className="u-ochre">adapters</span>.
+            Smart technology that{" "}
+            <span className="u-ochre">scales</span> to every language.
           </h2>
           <p className="sec-sub">
-            Not one model per language - that never scales to 520. A shared
-            foundation (NLLB-200 / Whisper / MMS) carries the heavy lifting;
-            ~4M-parameter LoRA/DoRA adapters specialise it per language or per
-            related-language cluster. An orchestration layer routes each input by
-            detected language and state to the right adapter.
+            We use a powerful core AI system that adapts to each Nigerian language. 
+            Instead of building separate models for 520+ languages, we created a flexible 
+            platform that learns each language's unique characteristics - from tones and 
+            dialects to regional variations.
           </p>
         </header>
 
         <div className="arch__diagram glass grain glass--shine">
           <div className="arch__col arch__col--in">
-            <span className="arch__col-label mono">INPUT</span>
-            <div className="arch__node arch__node--soft">English text / speech</div>
-            <div className="arch__node arch__node--soft">Detected language + state</div>
+            <span className="arch__col-label mono">YOUR TEXT</span>
+            <div className="arch__node arch__node--soft">English text or speech</div>
+            <div className="arch__node arch__node--soft">Language detection</div>
           </div>
 
           <div className="arch__flow" aria-hidden="true">
@@ -42,16 +41,16 @@ export default function Architecture() {
           </div>
 
           <div className="arch__col arch__col--hub">
-            <span className="arch__col-label mono">ORCHESTRATION</span>
+            <span className="arch__col-label mono">AI SYSTEM</span>
             <div className="arch__router">
               <span className="arch__glyph"></span>
-              Router
-              <small>language → adapter</small>
+              Smart Router
+              <small>matches your language</small>
             </div>
             <div className="arch__backbone">
-              <span className="mono">SHARED BACKBONE</span>
-              <strong>NLLB-200 · Whisper · MMS</strong>
-              <small>tonal-aware tokenization · diacritic-preserving</small>
+              <span className="mono">CORE AI PLATFORM</span>
+              <strong>Advanced Language Models</strong>
+              <small>preserves tones and special characters</small>
             </div>
           </div>
 
@@ -64,7 +63,7 @@ export default function Architecture() {
           </div>
 
           <div className="arch__col arch__col--out">
-            <span className="arch__col-label mono">ADAPTERS (~4M params)</span>
+            <span className="arch__col-label mono">LANGUAGE SPECIALISTS</span>
             <div className="arch__adapters">
               {ADAPTERS.map((a) => (
                 <div
@@ -91,30 +90,33 @@ export default function Architecture() {
           <div className="arch__note">
             <span className="arch__note-glyph"></span>
             <div>
-              <h4>Cluster-shared adapters</h4>
+              <h4>Bekwarra Pilot Program</h4>
               <p>
-                Related languages share adapters - Bendi tongues adapt to one
-                another far more easily than Bendi to Yoruba. Compute stays sane.
+                We're partnering with the Bekwarra community to preserve their endangered 
+                language through AI. This pilot demonstrates how technology can help 
+                document and revitalize languages with fewer than 100,000 speakers.
               </p>
             </div>
           </div>
           <div className="arch__note">
             <span className="arch__note-glyph"></span>
             <div>
-              <h4>Offline-first edge</h4>
+              <h4>Works Offline</h4>
               <p>
-                whisper.cpp + TFLite for deployment to rural areas with patchy
-                connectivity - the model in this demo already runs fully offline.
+                Our technology works in areas with limited internet connectivity. 
+                Communities in rural regions can access translation and speech tools 
+                even without reliable data connections.
               </p>
             </div>
           </div>
           <div className="arch__note">
             <span className="arch__note-glyph"></span>
             <div>
-              <h4>Tonal embedding integrity</h4>
+              <h4>Preserves Tones & Accents</h4>
               <p>
-                Diacritic-preserving tokenization keeps tone marks (á à ā â ǎ) and
-                subdot vowels intact - most Nigerian languages are tonal.
+                Nigerian languages use tones and special characters that change meaning. 
+                Our system keeps these intact (á à ā â ǎ), ensuring accurate translations 
+                that respect each language's unique sound system.
               </p>
             </div>
           </div>

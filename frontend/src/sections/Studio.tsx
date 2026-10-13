@@ -92,17 +92,16 @@ export default function Studio({
     <section className="section studio" id="studio">
       <div className="wrap">
         <header className="sec-head">
-          <span className="eyebrow">Translation Studio · live</span>
+          <span className="eyebrow">Try It Live</span>
           <h2>
-            Translate English into Nigerian languages - with the{" "}
-            <span className="u-ochre">linguistics shown</span>.
+            Translate into Nigerian languages with{" "}
+            <span className="u-ochre">cultural context</span>.
           </h2>
           <p className="sec-sub">
-            High-resource languages run on a real, local Meta NLLB-200 model,
-            entirely offline. Low-resource and endangered languages route to
-            research mode - a curated linguistic corpus now, live Claude reasoning
-            when an API key is present. Every result declares which engine produced
-            it and how confident it is.
+            See our technology in action. Major languages like Yoruba, Igbo, and Hausa 
+            use advanced AI models for instant translation. For endangered languages, 
+            we provide carefully researched translations with linguistic notes that 
+            help preserve cultural meaning.
           </p>
         </header>
 
@@ -116,14 +115,14 @@ export default function Studio({
                 value={target}
                 onChange={(e) => setTarget(e.target.value)}
               >
-                <optgroup label="Local NLLB model - offline neural MT">
+                <optgroup label="Major Languages - Advanced AI Translation">
                   {nllbLangs.map((l) => (
                     <option key={l.code} value={l.code}>
                       {l.name} · {l.family}
                     </option>
                   ))}
                 </optgroup>
-                <optgroup label="Research mode - curated / Claude">
+                <optgroup label="Emerging & Endangered - Curated Research">
                   {researchLangs.map((l) => (
                     <option key={l.code + l.name} value={l.code}>
                       {l.name} · T{l.tier} · {l.status}
@@ -142,7 +141,7 @@ export default function Studio({
                     color: isModel ? "var(--success)" : "var(--ochre-400)",
                   }}
                 >
-                  {isModel ? "Local NLLB model" : "Research mode"}
+                  {isModel ? "Advanced AI" : "Curated Research"}
                 </span>
                 <span className="chip">ISO {targetLang.iso639_3}</span>
                 <span className="chip">{targetLang.subgroup}</span>
@@ -186,7 +185,7 @@ export default function Studio({
             </div>
             {isModel && health?.nllb.state === "idle" && (
               <p className="studio__warm mono">
-                First model translation loads ~2.5GB on CPU (a few seconds).
+                First translation may take a moment as the AI model loads.
               </p>
             )}
           </div>
@@ -204,8 +203,8 @@ export default function Studio({
                 <div className="studio__spinner" />
                 <span>
                   {isModel
-                    ? "Running NLLB-200 on CPU…"
-                    : "Consulting research corpus…"}
+                    ? "Translating with AI model…"
+                    : "Searching our research database…"}
                 </span>
               </div>
             )}
